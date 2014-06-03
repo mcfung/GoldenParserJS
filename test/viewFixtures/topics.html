@@ -1,0 +1,1732 @@
+<!DOCTYPE html PUBLIC "-//WAPFORUM//DTD XHTML Mobile 1.2//EN"
+        "http://www.openmobilealliance.org/tech/DTD/xhtml-mobile12.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>香港高登 - 吹水台</title>
+    <script type="text/javascript">
+        //<![CDATA[
+        try {
+            if (!window.CloudFlare) {
+                var CloudFlare = [
+                    {verbose: 0, p: 0, byc: 0, owlid: "cf", bag2: 1, mirage2: 0, oracle: 0, paths: {cloudflare: "/cdn-cgi/nexp/dok9v=abba2f56bd/"}, atok: "9431fa0edbb2597901ad6d5c60ffca74", petok: "771cfa82dda1a765ed85b3d79763c1c1b4baea77-1401791966-1800", zone: "hkgolden.com", rocket: "0", apps: {"ga_key": {"ua": "UA-48961522-1", "ga_bs": "2"}}}
+                ];
+                !function(a, b) {
+                    a = document.createElement("script"), b = document.getElementsByTagName("script")[0], a.async =
+                                                                                                          !0, a.src =
+                                                                                                              "//ajax.cloudflare.com/cdn-cgi/nexp/dok9v=97fb4d042e/cloudflare.min.js", b.parentNode.insertBefore(a,
+                                                                                                                                                                                                                 b)
+                }()
+            }
+        } catch (e) {
+        }
+        ;
+        //]]>
+    </script>
+    <link href="/jscss/mobile.css" rel="StyleSheet" type="text/css"/>
+    <script type="text/javascript" src="/jscss/mobile.js"></script>
+
+    <link href="css/custom-theme/jquery-ui-1.10.3.custom.css" rel="stylesheet"/>
+    <script src="js/jquery-1.9.1.js"></script>
+    <script src="js/jquery-ui-1.10.3.custom.js"></script>
+    <script>
+        $(document).ready(function() {
+            $("#forumPanel").dialog({
+                                        autoOpen: false,
+                                        resizable: false,
+                                        width: 240,
+                                        height: 150,
+                                        draggable: false,
+                                        close: function() {
+                                            $(".TransparentGrayBackground").fadeOut("slow");
+                                            $("#forumPanel").dialog("close");
+                                            return false;
+                                        }
+                                    }).parent().appendTo(jQuery("form:first"));
+
+            $("#forumPanel").bind('dialogclose', function(event) {
+                $(".TransparentGrayBackground").fadeOut("slow");
+                return false;
+            });
+
+            $("#openForumPanel").click(function(event) {
+                $(".TransparentGrayBackground").css({ "display": "" }).fadeIn("slow");
+                $("#forumPanel").dialog("open");
+                return false;
+            });
+        });
+    </script>
+    <title>
+
+    </title>
+    <script type="text/javascript">
+        /* <![CDATA[ */
+        var _gaq = _gaq || [];
+        _gaq.push(['_setAccount', 'UA-48961522-1']);
+        _gaq.push(['_trackPageview']);
+
+        (function() {
+            var ga = document.createElement('script');
+            ga.type = 'text/javascript';
+            ga.async = true;
+            ga.src =
+            ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+            var s = document.getElementsByTagName('script')[0];
+            s.parentNode.insertBefore(ga, s);
+        })();
+
+        (function(b) {
+            (function(a) {
+                "__CF"in b && "DJS"in b.__CF ? b.__CF.DJS.push(a) : "addEventListener"in b ? b.addEventListener("load",
+                                                                                                                a, !1)
+                        : b.attachEvent("onload", a)
+            })(function() {
+                "FB"in b && "Event"in FB && "subscribe"in FB.Event && (FB.Event.subscribe("edge.create", function(a) {
+                    _gaq.push(["_trackSocial", "facebook", "like", a])
+                }), FB.Event.subscribe("edge.remove", function(a) {
+                    _gaq.push(["_trackSocial", "facebook", "unlike", a])
+                }), FB.Event.subscribe("message.send", function(a) {
+                    _gaq.push(["_trackSocial", "facebook", "send", a])
+                }));
+                "twttr"in b && "events"in twttr && "bind"in twttr.events && twttr.events.bind("tweet", function(a) {
+                    if (a) {
+                        var b;
+                        if (a.target && a.target.nodeName == "IFRAME") {
+                            a:{
+                                if (a = a.target.src) {
+                                    a = a.split("#")[0].match(/[^?=&]+=([^&]*)?/g);
+                                    b = 0;
+                                    for (var c; c = a[b]; ++b) {
+                                        if (c.indexOf("url") === 0) {
+                                            b = unescape(c.split("=")[1]);
+                                            break a
+                                        }
+                                    }
+                                }
+                                b = void 0
+                            }
+                        }
+                        _gaq.push(["_trackSocial", "twitter", "tweet", b])
+                    }
+                })
+            })
+        })(window);
+        /* ]]> */
+    </script>
+</head>
+<body>
+<div class='TransparentGrayBackground'></div>
+<div>
+<div class="MobileTopPanel">
+    <table width="100%">
+        <tr>
+            <td align="left" valign='top' width='98px'>
+                <a href="./Default.aspx"><img border="0" src="/images/mobile/mobile_logo2.png"/></a>
+            </td>
+            <td align="left" valign='top'>
+                <a href='' id='openForumPanel'>選擇伺服器</a>
+            </td>
+            <td align="right" valign='top'>
+                [<a href="./login.aspx">登入</a>]
+            </td>
+        </tr>
+    </table>
+</div>
+
+
+<script language="JavaScript">
+    <!--
+    var ads = new Array(5);
+    var google_ads = new Array();
+    var google_ad;
+
+    function google_ad_request_done(google_ads) {
+        /*
+         * This function is required and is used to display
+         * the ads that are returned from the JavaScript
+         * request. You should modify the document.write
+         * commands so that the HTML they write out fits
+         * with your desired ad layout.
+         */
+        var s = '';
+        var i;
+        var adsense_channel;
+        adsense_channel = '7953412069';
+
+        /*
+         * Verify that there are actually ads to display.
+         */
+
+        if (google_ads.length == 0) {
+            return;
+        }
+
+        /*
+         * If an image or Flash ad is returned, display that ad.
+         * Otherwise, build a string containing all of the ads and
+         * then use a document.write() command to print that string.
+         */
+
+        if (google_ads[0].type == "image") {
+            ads[0] = '<a href="' + google_ads[0].url +
+                     '" target="_top" title="go to ' + google_ads[0].visible_url +
+                     '"><img border="0" src="' + google_ads[0].image_url +
+                     '"width="' + google_ads[0].image_width +
+                     '"height="' + google_ads[0].image_height + '"></a>';
+
+        } else if (google_ads[0].type == "flash") {
+            ads[0] = '<object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000"' +
+                     ' codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=6,0,0,0"' +
+                     ' WIDTH="' + google_ad.image_width +
+                     '" HEIGHT="' + google_ad.image_height + '">' +
+                     '<PARAM NAME="movie" VALUE="' + google_ad.image_url + '">' +
+                     '<PARAM NAME="quality" VALUE="high">' +
+                     '<PARAM NAME="AllowScriptAccess" VALUE="never">' +
+                     '<EMBED src="' + google_ad.image_url +
+                     '" WIDTH="' + google_ad.image_width +
+                     '" HEIGHT="' + google_ad.image_height +
+                     '" TYPE="application/x-shockwave-flash"' +
+                     ' AllowScriptAccess="never" ' +
+                     ' PLUGINSPAGE="http://www.macromedia.com/go/getflashplayer"></EMBED></OBJECT>';
+
+        } else if (google_ads[0].type = "text") {
+            /*
+             * For text ads, append each ad to the string.
+             */
+            for (i = 0; i < google_ads.length; i++) {
+                ads[i] =
+                '<table width="100%" border="0" cellspacing="0" cellpadding="5">' +
+                '<tr><td style="text-align: left;" onclick="javascript:window.location=\'' + google_ads[i].url
+                        + '\';"><span class="googlelinkback2"><a href="' + google_info.feedback_url
+                        + '">Google 提供的廣告</a></span></td></tr>' +
+                '<tr><td style="text-align: left; font-size:12pt;" onclick="javascript:window.location=\''
+                        + google_ads[i].url + '\';">' +
+                '<div style="text-align:left; ">' +
+                '<a href="' + google_ads[i].url + '" ' + 'onmouseout="window.status=\'\'" '
+                        + 'onmouseover="window.status=\'go to ' + google_ads[i].visible_url + '\' ;return true" '
+                        + 'style="text-decoration:none">' +
+                '<span style="color:#000000;text-decoration:font-size:12pt;text-align:center;">' +
+                '<b>' +
+                google_ads[i].line1 +
+                '</b></span></a> ' +
+                '<span style="color:#000000;font-size:12pt;">' +
+                google_ads[i].line2 +
+                google_ads[i].line3 +
+                '</span> ' +
+                '<a href="' + google_ads[i].url + '" ' + 'onmouseout="window.status=\'\'" '
+                        + 'onmouseover="window.status=\'go to ' + google_ads[i].visible_url + '\' ;return true" '
+                        + 'style="text-decoration:none">' +
+                '<span style="font-size:12pt;">' +
+                google_ads[i].visible_url +
+                '</span></a></div></td>' +
+                '</tr></table>';
+            }
+        }
+
+        return;
+    }
+
+    google_ad_client = 'pub-1389340516477422'; // substitute your client_id
+    google_ad_channel = '7953412069';
+    google_ad_output = 'js';
+    google_max_num_ads = '5';
+    //google_page_url = 'http://www.hkgolden.com';
+    google_ad_type = 'text';
+    google_skip = '0';
+    google_language = 'zh-TW';
+    google_encoding = 'big5';
+    google_feedback = 'on';
+    google_safe = 'high';
+
+    google_adtest = 'off';
+
+    google_ad_section = 'default';
+    // -->
+</script>
+
+<script language="JavaScript" src="http://pagead2.googlesyndication.com/pagead/show_ads.js"></script>
+
+<div style="padding: 4px 4px 4px 4px;">
+<div id="TopicLists" class="TopicList">
+    <div class="TopicTitle">
+        <a href="/topics.aspx?type=BW">
+            <div>吹水台</div>
+        </a>
+    </div>
+    <div style="width: 100%;">
+        <div class="TopicAd">
+            <!--<div><span id="HKGHeaderGoogleAd">&nbsp;<br />&nbsp;<br />&nbsp;</span></div>-->
+            <div><span id="HKGHeaderGoogleAd">
+				</span></div>
+				
+<span id="GenGoogleAd0" style="/*display:none;*/">
+                                <script type="text/javascript">
+                                    if (ads[0] != undefined) {
+                                        document.write(ads[0]);
+                                    }
+                                </script>
+                            </span>
+
+
+        </div>
+
+
+        <div class="TopicAd">
+            <div><span id="MsgInLineAd1">
+
+<span id="GenGoogleAd1" style="/*display:none;*/">
+                                <script type="text/javascript">
+                                    if (ads[1] != undefined) {
+                                        document.write(ads[1]);
+                                    }
+                                </script>
+                            </span>
+
+
+                     </span></div>
+
+        </div>
+        <div class="TopicBox">
+            <div class="TopicBox_Details">
+                <a href="./view.aspx?message=5158533&type=BW">
+                    <div class="TopicBox_Replies">
+                        359
+                    </div>
+                    <div>
+                        [AN/iOS] Divine Gate [70] 10抽8八舞
+                    </div>
+                </a>
+
+                <div class="FloatsClearing"></div>
+                <div class="TopicBox_Author">
+                    企鵝牧場&nbsp;&nbsp;-&nbsp;(評分: 0)
+                    <select class="TopicBox_PageSelect"
+                            onchange="javascript: ViewThread(5158533, 'BW', this.options[this.selectedIndex].value)">
+                        <option value="0">頁...</option>
+                        <option value="1">第 1 頁</option>
+                        <option value="2">第 2 頁</option>
+                        <option value="3">第 3 頁</option>
+                        <option value="4">第 4 頁</option>
+                        <option value="5">第 5 頁</option>
+                        <option value="6">第 6 頁</option>
+                        <option value="7">第 7 頁</option>
+                        <option value="8">第 8 頁</option>
+                        <option value="9">第 9 頁</option>
+                        <option value="10">第 10 頁</option>
+                        <option value="11">第 11 頁</option>
+                        <option value="12">第 12 頁</option>
+                        <option value="13">第 13 頁</option>
+                        <option value="14">第 14 頁</option>
+                        <option value="15">第 15 頁</option>
+                    </select>
+                </div>
+            </div>
+            <div class="FloatsClearing"></div>
+        </div>
+
+        <div class="TopicBox2">
+            <div class="TopicBox_Details">
+                <a href="./view.aspx?message=5159835&type=BW">
+                    <div class="TopicBox_Replies">
+                        92
+                    </div>
+                    <div>
+                        好悶 玩下古典占星
+                    </div>
+                </a>
+
+                <div class="FloatsClearing"></div>
+                <div class="TopicBox_Author">
+                    猩猩伴我行&nbsp;&nbsp;-&nbsp;(評分: 1)
+                    <select class="TopicBox_PageSelect"
+                            onchange="javascript: ViewThread(5159835, 'BW', this.options[this.selectedIndex].value)">
+                        <option value="0">頁...</option>
+                        <option value="1">第 1 頁</option>
+                        <option value="2">第 2 頁</option>
+                        <option value="3">第 3 頁</option>
+                        <option value="4">第 4 頁</option>
+                    </select>
+                </div>
+            </div>
+            <div class="FloatsClearing"></div>
+        </div>
+
+    </div>
+</div>
+
+<div id="bottomFunc" class="View_PageSelectPanel2"></div>
+<div class="View_PageSelectPanel">
+<div class="View_PageSelectLeft">
+
+</div>
+
+<div class="View_PageSelectRight">
+
+    <a href="topics.aspx?type=BW&amp;page=2">下一頁</a>
+
+</div>
+
+<select class="View_PageSelect" onchange="javascript: ViewTopic('BW', this.options[this.selectedIndex].value)">
+
+<option selected="selected" value="1">第 1 頁</option>
+
+<option value="2">第 2 頁</option>
+
+<option value="3">第 3 頁</option>
+
+<option value="4">第 4 頁</option>
+
+<option value="5">第 5 頁</option>
+
+<option value="6">第 6 頁</option>
+
+<option value="7">第 7 頁</option>
+
+<option value="8">第 8 頁</option>
+
+<option value="9">第 9 頁</option>
+
+<option value="10">第 10 頁</option>
+
+<option value="11">第 11 頁</option>
+
+<option value="12">第 12 頁</option>
+
+<option value="13">第 13 頁</option>
+
+<option value="14">第 14 頁</option>
+
+<option value="15">第 15 頁</option>
+
+<option value="16">第 16 頁</option>
+
+<option value="17">第 17 頁</option>
+
+<option value="18">第 18 頁</option>
+
+<option value="19">第 19 頁</option>
+
+<option value="20">第 20 頁</option>
+
+<option value="21">第 21 頁</option>
+
+<option value="22">第 22 頁</option>
+
+<option value="23">第 23 頁</option>
+
+<option value="24">第 24 頁</option>
+
+<option value="25">第 25 頁</option>
+
+<option value="26">第 26 頁</option>
+
+<option value="27">第 27 頁</option>
+
+<option value="28">第 28 頁</option>
+
+<option value="29">第 29 頁</option>
+
+<option value="30">第 30 頁</option>
+
+<option value="31">第 31 頁</option>
+
+<option value="32">第 32 頁</option>
+
+<option value="33">第 33 頁</option>
+
+<option value="34">第 34 頁</option>
+
+<option value="35">第 35 頁</option>
+
+<option value="36">第 36 頁</option>
+
+<option value="37">第 37 頁</option>
+
+<option value="38">第 38 頁</option>
+
+<option value="39">第 39 頁</option>
+
+<option value="40">第 40 頁</option>
+
+<option value="41">第 41 頁</option>
+
+<option value="42">第 42 頁</option>
+
+<option value="43">第 43 頁</option>
+
+<option value="44">第 44 頁</option>
+
+<option value="45">第 45 頁</option>
+
+<option value="46">第 46 頁</option>
+
+<option value="47">第 47 頁</option>
+
+<option value="48">第 48 頁</option>
+
+<option value="49">第 49 頁</option>
+
+<option value="50">第 50 頁</option>
+
+<option value="51">第 51 頁</option>
+
+<option value="52">第 52 頁</option>
+
+<option value="53">第 53 頁</option>
+
+<option value="54">第 54 頁</option>
+
+<option value="55">第 55 頁</option>
+
+<option value="56">第 56 頁</option>
+
+<option value="57">第 57 頁</option>
+
+<option value="58">第 58 頁</option>
+
+<option value="59">第 59 頁</option>
+
+<option value="60">第 60 頁</option>
+
+<option value="61">第 61 頁</option>
+
+<option value="62">第 62 頁</option>
+
+<option value="63">第 63 頁</option>
+
+<option value="64">第 64 頁</option>
+
+<option value="65">第 65 頁</option>
+
+<option value="66">第 66 頁</option>
+
+<option value="67">第 67 頁</option>
+
+<option value="68">第 68 頁</option>
+
+<option value="69">第 69 頁</option>
+
+<option value="70">第 70 頁</option>
+
+<option value="71">第 71 頁</option>
+
+<option value="72">第 72 頁</option>
+
+<option value="73">第 73 頁</option>
+
+<option value="74">第 74 頁</option>
+
+<option value="75">第 75 頁</option>
+
+<option value="76">第 76 頁</option>
+
+<option value="77">第 77 頁</option>
+
+<option value="78">第 78 頁</option>
+
+<option value="79">第 79 頁</option>
+
+<option value="80">第 80 頁</option>
+
+<option value="81">第 81 頁</option>
+
+<option value="82">第 82 頁</option>
+
+<option value="83">第 83 頁</option>
+
+<option value="84">第 84 頁</option>
+
+<option value="85">第 85 頁</option>
+
+<option value="86">第 86 頁</option>
+
+<option value="87">第 87 頁</option>
+
+<option value="88">第 88 頁</option>
+
+<option value="89">第 89 頁</option>
+
+<option value="90">第 90 頁</option>
+
+<option value="91">第 91 頁</option>
+
+<option value="92">第 92 頁</option>
+
+<option value="93">第 93 頁</option>
+
+<option value="94">第 94 頁</option>
+
+<option value="95">第 95 頁</option>
+
+<option value="96">第 96 頁</option>
+
+<option value="97">第 97 頁</option>
+
+<option value="98">第 98 頁</option>
+
+<option value="99">第 99 頁</option>
+
+<option value="100">第 100 頁</option>
+
+<option value="101">第 101 頁</option>
+
+<option value="102">第 102 頁</option>
+
+<option value="103">第 103 頁</option>
+
+<option value="104">第 104 頁</option>
+
+<option value="105">第 105 頁</option>
+
+<option value="106">第 106 頁</option>
+
+<option value="107">第 107 頁</option>
+
+<option value="108">第 108 頁</option>
+
+<option value="109">第 109 頁</option>
+
+<option value="110">第 110 頁</option>
+
+<option value="111">第 111 頁</option>
+
+<option value="112">第 112 頁</option>
+
+<option value="113">第 113 頁</option>
+
+<option value="114">第 114 頁</option>
+
+<option value="115">第 115 頁</option>
+
+<option value="116">第 116 頁</option>
+
+<option value="117">第 117 頁</option>
+
+<option value="118">第 118 頁</option>
+
+<option value="119">第 119 頁</option>
+
+<option value="120">第 120 頁</option>
+
+<option value="121">第 121 頁</option>
+
+<option value="122">第 122 頁</option>
+
+<option value="123">第 123 頁</option>
+
+<option value="124">第 124 頁</option>
+
+<option value="125">第 125 頁</option>
+
+<option value="126">第 126 頁</option>
+
+<option value="127">第 127 頁</option>
+
+<option value="128">第 128 頁</option>
+
+<option value="129">第 129 頁</option>
+
+<option value="130">第 130 頁</option>
+
+<option value="131">第 131 頁</option>
+
+<option value="132">第 132 頁</option>
+
+<option value="133">第 133 頁</option>
+
+<option value="134">第 134 頁</option>
+
+<option value="135">第 135 頁</option>
+
+<option value="136">第 136 頁</option>
+
+<option value="137">第 137 頁</option>
+
+<option value="138">第 138 頁</option>
+
+<option value="139">第 139 頁</option>
+
+<option value="140">第 140 頁</option>
+
+<option value="141">第 141 頁</option>
+
+<option value="142">第 142 頁</option>
+
+<option value="143">第 143 頁</option>
+
+<option value="144">第 144 頁</option>
+
+<option value="145">第 145 頁</option>
+
+<option value="146">第 146 頁</option>
+
+<option value="147">第 147 頁</option>
+
+<option value="148">第 148 頁</option>
+
+<option value="149">第 149 頁</option>
+
+<option value="150">第 150 頁</option>
+
+<option value="151">第 151 頁</option>
+
+<option value="152">第 152 頁</option>
+
+<option value="153">第 153 頁</option>
+
+<option value="154">第 154 頁</option>
+
+<option value="155">第 155 頁</option>
+
+<option value="156">第 156 頁</option>
+
+<option value="157">第 157 頁</option>
+
+<option value="158">第 158 頁</option>
+
+<option value="159">第 159 頁</option>
+
+<option value="160">第 160 頁</option>
+
+<option value="161">第 161 頁</option>
+
+<option value="162">第 162 頁</option>
+
+<option value="163">第 163 頁</option>
+
+<option value="164">第 164 頁</option>
+
+<option value="165">第 165 頁</option>
+
+<option value="166">第 166 頁</option>
+
+<option value="167">第 167 頁</option>
+
+<option value="168">第 168 頁</option>
+
+<option value="169">第 169 頁</option>
+
+<option value="170">第 170 頁</option>
+
+<option value="171">第 171 頁</option>
+
+<option value="172">第 172 頁</option>
+
+<option value="173">第 173 頁</option>
+
+<option value="174">第 174 頁</option>
+
+<option value="175">第 175 頁</option>
+
+<option value="176">第 176 頁</option>
+
+<option value="177">第 177 頁</option>
+
+<option value="178">第 178 頁</option>
+
+<option value="179">第 179 頁</option>
+
+<option value="180">第 180 頁</option>
+
+<option value="181">第 181 頁</option>
+
+<option value="182">第 182 頁</option>
+
+<option value="183">第 183 頁</option>
+
+<option value="184">第 184 頁</option>
+
+<option value="185">第 185 頁</option>
+
+<option value="186">第 186 頁</option>
+
+<option value="187">第 187 頁</option>
+
+<option value="188">第 188 頁</option>
+
+<option value="189">第 189 頁</option>
+
+<option value="190">第 190 頁</option>
+
+<option value="191">第 191 頁</option>
+
+<option value="192">第 192 頁</option>
+
+<option value="193">第 193 頁</option>
+
+<option value="194">第 194 頁</option>
+
+<option value="195">第 195 頁</option>
+
+<option value="196">第 196 頁</option>
+
+<option value="197">第 197 頁</option>
+
+<option value="198">第 198 頁</option>
+
+<option value="199">第 199 頁</option>
+
+<option value="200">第 200 頁</option>
+
+<option value="201">第 201 頁</option>
+
+<option value="202">第 202 頁</option>
+
+<option value="203">第 203 頁</option>
+
+<option value="204">第 204 頁</option>
+
+<option value="205">第 205 頁</option>
+
+<option value="206">第 206 頁</option>
+
+<option value="207">第 207 頁</option>
+
+<option value="208">第 208 頁</option>
+
+<option value="209">第 209 頁</option>
+
+<option value="210">第 210 頁</option>
+
+<option value="211">第 211 頁</option>
+
+<option value="212">第 212 頁</option>
+
+<option value="213">第 213 頁</option>
+
+<option value="214">第 214 頁</option>
+
+<option value="215">第 215 頁</option>
+
+<option value="216">第 216 頁</option>
+
+<option value="217">第 217 頁</option>
+
+<option value="218">第 218 頁</option>
+
+<option value="219">第 219 頁</option>
+
+<option value="220">第 220 頁</option>
+
+<option value="221">第 221 頁</option>
+
+<option value="222">第 222 頁</option>
+
+<option value="223">第 223 頁</option>
+
+<option value="224">第 224 頁</option>
+
+<option value="225">第 225 頁</option>
+
+<option value="226">第 226 頁</option>
+
+<option value="227">第 227 頁</option>
+
+<option value="228">第 228 頁</option>
+
+<option value="229">第 229 頁</option>
+
+<option value="230">第 230 頁</option>
+
+<option value="231">第 231 頁</option>
+
+<option value="232">第 232 頁</option>
+
+<option value="233">第 233 頁</option>
+
+<option value="234">第 234 頁</option>
+
+<option value="235">第 235 頁</option>
+
+<option value="236">第 236 頁</option>
+
+<option value="237">第 237 頁</option>
+
+<option value="238">第 238 頁</option>
+
+<option value="239">第 239 頁</option>
+
+<option value="240">第 240 頁</option>
+
+<option value="241">第 241 頁</option>
+
+<option value="242">第 242 頁</option>
+
+<option value="243">第 243 頁</option>
+
+<option value="244">第 244 頁</option>
+
+<option value="245">第 245 頁</option>
+
+<option value="246">第 246 頁</option>
+
+<option value="247">第 247 頁</option>
+
+<option value="248">第 248 頁</option>
+
+<option value="249">第 249 頁</option>
+
+<option value="250">第 250 頁</option>
+
+<option value="251">第 251 頁</option>
+
+<option value="252">第 252 頁</option>
+
+<option value="253">第 253 頁</option>
+
+<option value="254">第 254 頁</option>
+
+<option value="255">第 255 頁</option>
+
+<option value="256">第 256 頁</option>
+
+<option value="257">第 257 頁</option>
+
+<option value="258">第 258 頁</option>
+
+<option value="259">第 259 頁</option>
+
+<option value="260">第 260 頁</option>
+
+<option value="261">第 261 頁</option>
+
+<option value="262">第 262 頁</option>
+
+<option value="263">第 263 頁</option>
+
+<option value="264">第 264 頁</option>
+
+<option value="265">第 265 頁</option>
+
+<option value="266">第 266 頁</option>
+
+<option value="267">第 267 頁</option>
+
+<option value="268">第 268 頁</option>
+
+<option value="269">第 269 頁</option>
+
+<option value="270">第 270 頁</option>
+
+<option value="271">第 271 頁</option>
+
+<option value="272">第 272 頁</option>
+
+<option value="273">第 273 頁</option>
+
+<option value="274">第 274 頁</option>
+
+<option value="275">第 275 頁</option>
+
+<option value="276">第 276 頁</option>
+
+<option value="277">第 277 頁</option>
+
+<option value="278">第 278 頁</option>
+
+<option value="279">第 279 頁</option>
+
+<option value="280">第 280 頁</option>
+
+<option value="281">第 281 頁</option>
+
+<option value="282">第 282 頁</option>
+
+<option value="283">第 283 頁</option>
+
+<option value="284">第 284 頁</option>
+
+<option value="285">第 285 頁</option>
+
+<option value="286">第 286 頁</option>
+
+<option value="287">第 287 頁</option>
+
+<option value="288">第 288 頁</option>
+
+<option value="289">第 289 頁</option>
+
+<option value="290">第 290 頁</option>
+
+<option value="291">第 291 頁</option>
+
+<option value="292">第 292 頁</option>
+
+<option value="293">第 293 頁</option>
+
+<option value="294">第 294 頁</option>
+
+<option value="295">第 295 頁</option>
+
+<option value="296">第 296 頁</option>
+
+<option value="297">第 297 頁</option>
+
+<option value="298">第 298 頁</option>
+
+<option value="299">第 299 頁</option>
+
+<option value="300">第 300 頁</option>
+
+<option value="301">第 301 頁</option>
+
+<option value="302">第 302 頁</option>
+
+<option value="303">第 303 頁</option>
+
+<option value="304">第 304 頁</option>
+
+<option value="305">第 305 頁</option>
+
+<option value="306">第 306 頁</option>
+
+<option value="307">第 307 頁</option>
+
+<option value="308">第 308 頁</option>
+
+<option value="309">第 309 頁</option>
+
+<option value="310">第 310 頁</option>
+
+<option value="311">第 311 頁</option>
+
+<option value="312">第 312 頁</option>
+
+<option value="313">第 313 頁</option>
+
+<option value="314">第 314 頁</option>
+
+<option value="315">第 315 頁</option>
+
+<option value="316">第 316 頁</option>
+
+<option value="317">第 317 頁</option>
+
+<option value="318">第 318 頁</option>
+
+<option value="319">第 319 頁</option>
+
+<option value="320">第 320 頁</option>
+
+<option value="321">第 321 頁</option>
+
+<option value="322">第 322 頁</option>
+
+<option value="323">第 323 頁</option>
+
+<option value="324">第 324 頁</option>
+
+<option value="325">第 325 頁</option>
+
+<option value="326">第 326 頁</option>
+
+<option value="327">第 327 頁</option>
+
+<option value="328">第 328 頁</option>
+
+<option value="329">第 329 頁</option>
+
+<option value="330">第 330 頁</option>
+
+<option value="331">第 331 頁</option>
+
+<option value="332">第 332 頁</option>
+
+<option value="333">第 333 頁</option>
+
+<option value="334">第 334 頁</option>
+
+<option value="335">第 335 頁</option>
+
+<option value="336">第 336 頁</option>
+
+<option value="337">第 337 頁</option>
+
+<option value="338">第 338 頁</option>
+
+<option value="339">第 339 頁</option>
+
+<option value="340">第 340 頁</option>
+
+<option value="341">第 341 頁</option>
+
+<option value="342">第 342 頁</option>
+
+<option value="343">第 343 頁</option>
+
+<option value="344">第 344 頁</option>
+
+<option value="345">第 345 頁</option>
+
+<option value="346">第 346 頁</option>
+
+<option value="347">第 347 頁</option>
+
+<option value="348">第 348 頁</option>
+
+<option value="349">第 349 頁</option>
+
+<option value="350">第 350 頁</option>
+
+<option value="351">第 351 頁</option>
+
+<option value="352">第 352 頁</option>
+
+<option value="353">第 353 頁</option>
+
+<option value="354">第 354 頁</option>
+
+<option value="355">第 355 頁</option>
+
+<option value="356">第 356 頁</option>
+
+<option value="357">第 357 頁</option>
+
+<option value="358">第 358 頁</option>
+
+<option value="359">第 359 頁</option>
+
+<option value="360">第 360 頁</option>
+
+<option value="361">第 361 頁</option>
+
+<option value="362">第 362 頁</option>
+
+<option value="363">第 363 頁</option>
+
+<option value="364">第 364 頁</option>
+
+<option value="365">第 365 頁</option>
+
+<option value="366">第 366 頁</option>
+
+<option value="367">第 367 頁</option>
+
+<option value="368">第 368 頁</option>
+
+<option value="369">第 369 頁</option>
+
+<option value="370">第 370 頁</option>
+
+<option value="371">第 371 頁</option>
+
+<option value="372">第 372 頁</option>
+
+<option value="373">第 373 頁</option>
+
+<option value="374">第 374 頁</option>
+
+<option value="375">第 375 頁</option>
+
+<option value="376">第 376 頁</option>
+
+<option value="377">第 377 頁</option>
+
+<option value="378">第 378 頁</option>
+
+<option value="379">第 379 頁</option>
+
+<option value="380">第 380 頁</option>
+
+<option value="381">第 381 頁</option>
+
+<option value="382">第 382 頁</option>
+
+<option value="383">第 383 頁</option>
+
+<option value="384">第 384 頁</option>
+
+<option value="385">第 385 頁</option>
+
+<option value="386">第 386 頁</option>
+
+<option value="387">第 387 頁</option>
+
+<option value="388">第 388 頁</option>
+
+<option value="389">第 389 頁</option>
+
+<option value="390">第 390 頁</option>
+
+<option value="391">第 391 頁</option>
+
+<option value="392">第 392 頁</option>
+
+<option value="393">第 393 頁</option>
+
+<option value="394">第 394 頁</option>
+
+<option value="395">第 395 頁</option>
+
+<option value="396">第 396 頁</option>
+
+<option value="397">第 397 頁</option>
+
+<option value="398">第 398 頁</option>
+
+<option value="399">第 399 頁</option>
+
+<option value="400">第 400 頁</option>
+
+<option value="401">第 401 頁</option>
+
+<option value="402">第 402 頁</option>
+
+<option value="403">第 403 頁</option>
+
+<option value="404">第 404 頁</option>
+
+<option value="405">第 405 頁</option>
+
+<option value="406">第 406 頁</option>
+
+<option value="407">第 407 頁</option>
+
+<option value="408">第 408 頁</option>
+
+<option value="409">第 409 頁</option>
+
+<option value="410">第 410 頁</option>
+
+<option value="411">第 411 頁</option>
+
+<option value="412">第 412 頁</option>
+
+<option value="413">第 413 頁</option>
+
+<option value="414">第 414 頁</option>
+
+<option value="415">第 415 頁</option>
+
+<option value="416">第 416 頁</option>
+
+<option value="417">第 417 頁</option>
+
+<option value="418">第 418 頁</option>
+
+<option value="419">第 419 頁</option>
+
+<option value="420">第 420 頁</option>
+
+<option value="421">第 421 頁</option>
+
+<option value="422">第 422 頁</option>
+
+<option value="423">第 423 頁</option>
+
+<option value="424">第 424 頁</option>
+
+<option value="425">第 425 頁</option>
+
+<option value="426">第 426 頁</option>
+
+<option value="427">第 427 頁</option>
+
+<option value="428">第 428 頁</option>
+
+<option value="429">第 429 頁</option>
+
+<option value="430">第 430 頁</option>
+
+<option value="431">第 431 頁</option>
+
+<option value="432">第 432 頁</option>
+
+<option value="433">第 433 頁</option>
+
+<option value="434">第 434 頁</option>
+
+<option value="435">第 435 頁</option>
+
+<option value="436">第 436 頁</option>
+
+<option value="437">第 437 頁</option>
+
+<option value="438">第 438 頁</option>
+
+<option value="439">第 439 頁</option>
+
+<option value="440">第 440 頁</option>
+
+<option value="441">第 441 頁</option>
+
+<option value="442">第 442 頁</option>
+
+<option value="443">第 443 頁</option>
+
+<option value="444">第 444 頁</option>
+
+<option value="445">第 445 頁</option>
+
+<option value="446">第 446 頁</option>
+
+<option value="447">第 447 頁</option>
+
+<option value="448">第 448 頁</option>
+
+<option value="449">第 449 頁</option>
+
+<option value="450">第 450 頁</option>
+
+<option value="451">第 451 頁</option>
+
+<option value="452">第 452 頁</option>
+
+<option value="453">第 453 頁</option>
+
+<option value="454">第 454 頁</option>
+
+<option value="455">第 455 頁</option>
+
+<option value="456">第 456 頁</option>
+
+<option value="457">第 457 頁</option>
+
+<option value="458">第 458 頁</option>
+
+<option value="459">第 459 頁</option>
+
+<option value="460">第 460 頁</option>
+
+<option value="461">第 461 頁</option>
+
+<option value="462">第 462 頁</option>
+
+<option value="463">第 463 頁</option>
+
+<option value="464">第 464 頁</option>
+
+<option value="465">第 465 頁</option>
+
+<option value="466">第 466 頁</option>
+
+<option value="467">第 467 頁</option>
+
+<option value="468">第 468 頁</option>
+
+<option value="469">第 469 頁</option>
+
+<option value="470">第 470 頁</option>
+
+<option value="471">第 471 頁</option>
+
+<option value="472">第 472 頁</option>
+
+<option value="473">第 473 頁</option>
+
+<option value="474">第 474 頁</option>
+
+<option value="475">第 475 頁</option>
+
+<option value="476">第 476 頁</option>
+
+<option value="477">第 477 頁</option>
+
+<option value="478">第 478 頁</option>
+
+<option value="479">第 479 頁</option>
+
+<option value="480">第 480 頁</option>
+
+<option value="481">第 481 頁</option>
+
+<option value="482">第 482 頁</option>
+
+<option value="483">第 483 頁</option>
+
+<option value="484">第 484 頁</option>
+
+<option value="485">第 485 頁</option>
+
+<option value="486">第 486 頁</option>
+
+<option value="487">第 487 頁</option>
+
+<option value="488">第 488 頁</option>
+
+<option value="489">第 489 頁</option>
+
+<option value="490">第 490 頁</option>
+
+<option value="491">第 491 頁</option>
+
+<option value="492">第 492 頁</option>
+
+<option value="493">第 493 頁</option>
+
+<option value="494">第 494 頁</option>
+
+<option value="495">第 495 頁</option>
+
+<option value="496">第 496 頁</option>
+
+<option value="497">第 497 頁</option>
+
+<option value="498">第 498 頁</option>
+
+<option value="499">第 499 頁</option>
+
+<option value="500">第 500 頁</option>
+
+<option value="501">第 501 頁</option>
+
+<option value="502">第 502 頁</option>
+
+<option value="503">第 503 頁</option>
+
+<option value="504">第 504 頁</option>
+
+<option value="505">第 505 頁</option>
+
+<option value="506">第 506 頁</option>
+
+<option value="507">第 507 頁</option>
+
+<option value="508">第 508 頁</option>
+
+<option value="509">第 509 頁</option>
+
+<option value="510">第 510 頁</option>
+
+<option value="511">第 511 頁</option>
+
+<option value="512">第 512 頁</option>
+
+<option value="513">第 513 頁</option>
+
+<option value="514">第 514 頁</option>
+
+<option value="515">第 515 頁</option>
+
+<option value="516">第 516 頁</option>
+
+<option value="517">第 517 頁</option>
+
+<option value="518">第 518 頁</option>
+
+<option value="519">第 519 頁</option>
+
+<option value="520">第 520 頁</option>
+
+<option value="521">第 521 頁</option>
+
+<option value="522">第 522 頁</option>
+
+<option value="523">第 523 頁</option>
+
+<option value="524">第 524 頁</option>
+
+<option value="525">第 525 頁</option>
+
+<option value="526">第 526 頁</option>
+
+<option value="527">第 527 頁</option>
+
+<option value="528">第 528 頁</option>
+
+<option value="529">第 529 頁</option>
+
+<option value="530">第 530 頁</option>
+
+<option value="531">第 531 頁</option>
+
+<option value="532">第 532 頁</option>
+
+<option value="533">第 533 頁</option>
+
+<option value="534">第 534 頁</option>
+
+<option value="535">第 535 頁</option>
+
+<option value="536">第 536 頁</option>
+
+<option value="537">第 537 頁</option>
+
+<option value="538">第 538 頁</option>
+
+<option value="539">第 539 頁</option>
+
+<option value="540">第 540 頁</option>
+
+<option value="541">第 541 頁</option>
+
+<option value="542">第 542 頁</option>
+
+<option value="543">第 543 頁</option>
+
+<option value="544">第 544 頁</option>
+
+<option value="545">第 545 頁</option>
+
+<option value="546">第 546 頁</option>
+
+<option value="547">第 547 頁</option>
+
+<option value="548">第 548 頁</option>
+
+<option value="549">第 549 頁</option>
+
+<option value="550">第 550 頁</option>
+
+<option value="551">第 551 頁</option>
+
+<option value="552">第 552 頁</option>
+
+<option value="553">第 553 頁</option>
+
+<option value="554">第 554 頁</option>
+
+<option value="555">第 555 頁</option>
+
+<option value="556">第 556 頁</option>
+
+<option value="557">第 557 頁</option>
+
+<option value="558">第 558 頁</option>
+
+<option value="559">第 559 頁</option>
+
+<option value="560">第 560 頁</option>
+
+<option value="561">第 561 頁</option>
+
+<option value="562">第 562 頁</option>
+
+<option value="563">第 563 頁</option>
+
+<option value="564">第 564 頁</option>
+
+<option value="565">第 565 頁</option>
+
+<option value="566">第 566 頁</option>
+
+<option value="567">第 567 頁</option>
+
+<option value="568">第 568 頁</option>
+
+<option value="569">第 569 頁</option>
+
+<option value="570">第 570 頁</option>
+
+<option value="571">第 571 頁</option>
+
+<option value="572">第 572 頁</option>
+
+<option value="573">第 573 頁</option>
+
+<option value="574">第 574 頁</option>
+
+<option value="575">第 575 頁</option>
+
+<option value="576">第 576 頁</option>
+
+<option value="577">第 577 頁</option>
+
+<option value="578">第 578 頁</option>
+
+<option value="579">第 579 頁</option>
+
+<option value="580">第 580 頁</option>
+
+<option value="581">第 581 頁</option>
+
+<option value="582">第 582 頁</option>
+
+<option value="583">第 583 頁</option>
+
+<option value="584">第 584 頁</option>
+
+<option value="585">第 585 頁</option>
+
+<option value="586">第 586 頁</option>
+
+<option value="587">第 587 頁</option>
+
+<option value="588">第 588 頁</option>
+
+<option value="589">第 589 頁</option>
+
+<option value="590">第 590 頁</option>
+
+<option value="591">第 591 頁</option>
+
+<option value="592">第 592 頁</option>
+
+<option value="593">第 593 頁</option>
+
+<option value="594">第 594 頁</option>
+
+<option value="595">第 595 頁</option>
+
+<option value="596">第 596 頁</option>
+
+<option value="597">第 597 頁</option>
+
+<option value="598">第 598 頁</option>
+
+<option value="599">第 599 頁</option>
+
+<option value="600">第 600 頁</option>
+
+<option value="601">第 601 頁</option>
+
+<option value="602">第 602 頁</option>
+
+<option value="603">第 603 頁</option>
+
+<option value="604">第 604 頁</option>
+
+<option value="605">第 605 頁</option>
+
+<option value="606">第 606 頁</option>
+
+<option value="607">第 607 頁</option>
+
+<option value="608">第 608 頁</option>
+
+<option value="609">第 609 頁</option>
+
+<option value="610">第 610 頁</option>
+
+<option value="611">第 611 頁</option>
+
+<option value="612">第 612 頁</option>
+
+<option value="613">第 613 頁</option>
+
+<option value="614">第 614 頁</option>
+
+<option value="615">第 615 頁</option>
+
+<option value="616">第 616 頁</option>
+
+<option value="617">第 617 頁</option>
+
+<option value="618">第 618 頁</option>
+
+<option value="619">第 619 頁</option>
+
+<option value="620">第 620 頁</option>
+
+<option value="621">第 621 頁</option>
+
+<option value="622">第 622 頁</option>
+
+<option value="623">第 623 頁</option>
+
+<option value="624">第 624 頁</option>
+
+<option value="625">第 625 頁</option>
+
+<option value="626">第 626 頁</option>
+
+<option value="627">第 627 頁</option>
+
+<option value="628">第 628 頁</option>
+
+<option value="629">第 629 頁</option>
+
+<option value="630">第 630 頁</option>
+
+<option value="631">第 631 頁</option>
+
+<option value="632">第 632 頁</option>
+
+<option value="633">第 633 頁</option>
+
+<option value="634">第 634 頁</option>
+
+<option value="635">第 635 頁</option>
+
+<option value="636">第 636 頁</option>
+
+<option value="637">第 637 頁</option>
+
+<option value="638">第 638 頁</option>
+
+<option value="639">第 639 頁</option>
+
+<option value="640">第 640 頁</option>
+
+</select>
+</div>
+
+<div id="FuncPanel" class="FuncPanel">
+    <a href="post.aspx?mt=N&amp;ft=BW">
+        <div style="float: left; width: 30%;">發表</div>
+    </a>
+
+    <div class="FloatsClearing"></div>
+</div>
+</div>
+
+
+</div>
+
+<div align="center" style="padding: 5px 5px 0px 5px;">
+    <script type="text/javascript"><!--
+    google_ad_client = "ca-pub-9656661705393924";
+    /* mobile frontpage banner (bottom) */
+    google_ad_slot = "3208889735";
+    google_ad_width = 300;
+    google_ad_height = 250;
+    //-->
+    </script>
+    <script type="text/javascript"
+            src="//pagead2.googlesyndication.com/pagead/show_ads.js">
+    </script>
+</div>
+
+<div class="FooterPanel">
+    現上線用戶數量: 5,206/101,451<br/>
+    &#169 2014 HKGolden.com. All Rights Reserved.<br/>
+    <a class="terms_link" href="/terms.html">Terms and Conditions</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a
+        class="__cf_email__" href="http://www.cloudflare.com/email-protection"
+        data-cfemail="3851565e577850535f57545c5d56165b5755">[email&nbsp;protected]</a>
+    <script type="text/javascript">
+        /* <![CDATA[ */
+        (function() {
+            try {
+                var s, a, i, j, r, c, l, b = document.getElementsByTagName("script");
+                l = b[b.length - 1].previousSibling;
+                a = l.getAttribute('data-cfemail');
+                if (a) {
+                    s = '';
+                    r = parseInt(a.substr(0, 2), 16);
+                    for (j = 2; a.length - j; j += 2) {
+                        c = parseInt(a.substr(j, 2), 16) ^ r;
+                        s += String.fromCharCode(c);
+                    }
+                    s = document.createTextNode(s);
+                    l.parentNode.replaceChild(s, l);
+                }
+            } catch (e) {
+            }
+        })();
+        /* ]]> */
+    </script>
+</div>
+
+<div id="forumPanel" title="選擇伺服器">
+    <a href='http://m2.hkgolden.com/topics.aspx?type=BW'>非會員伺服器</a>
+
+    <div style="height:7px;"></div>
+    <div class="DivDetailsSeperator"></div>
+    <div style="height:7px;"></div>
+    <a href='http://m4.hkgolden.com/topics.aspx?type=BW'>會員伺服器</a>
+</div>
+
+<script type="text/javascript">
+    var gaJsHost = (("https:" == document.location.protocol) ? "https://" : "http://")
+    document.write(unescape("%3Cscript src='" + gaJsHost
+                                    + "stats.g.doubleclick.net/dc.js' type='text/javascript'%3E%3C/script%3E"))
+</script>
+<script type="text/javascript">
+    try {
+        var pageTracker = _gat._getTracker("UA-5029867-6");
+        pageTracker._trackPageview();
+    } catch (err) {
+    }
+</script>
+
+</body>
+</html>

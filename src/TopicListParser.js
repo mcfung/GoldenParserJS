@@ -12,13 +12,14 @@
       $ = cheerio.load(responseBody);
       topicDoms = $('.TopicBox_Details');
       result = [];
-      return topicDoms.each(function() {
+      topicDoms.each(function() {
         var authorAndRating, getAuthorAndRating, getMessageId, getNumberOfReplies, getTitle, getTotalNumberOfPage, messageId, numberOfReplies, title, totalNumberOfPage;
         getAuthorAndRating = function(ele) {
           var author, authorDom, rating, text;
           authorDom = $('.TopicBox_Author', ele);
           text = authorDom.text().trim();
           author = text.substring(0, text.indexOf("-"));
+          author = author.trim();
           rating = parseInt(text.substring(text.lastIndexOf(":") + 2, text.lastIndexOf(")")));
           return {
             author: author,
@@ -51,7 +52,7 @@
         messageId = getMessageId(this);
         totalNumberOfPage = getTotalNumberOfPage(this);
         numberOfReplies = getNumberOfReplies(this);
-        result.push({
+        return result.push({
           author: authorAndRating.author,
           rating: authorAndRating.rating,
           title: title,
@@ -59,8 +60,8 @@
           totalNumberOfPage: totalNumberOfPage,
           numberOfReplies: numberOfReplies
         });
-        return onCompleteCallback(result);
       });
+      return onCompleteCallback(result);
     };
 
     return TopicListParser;

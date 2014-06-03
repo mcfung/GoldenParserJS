@@ -1,14 +1,22 @@
 {
-    "name": "golden-parser",
-    "description": "Parse forum post in hkgolden.com for further processing.",
-    "author": "Mike Chung <mikechung4@gmail.com>",
-    "repository": {
-        "type": "git",
-        "url": "git@github.com:mcfung/GoldenParserJS.git"
-    },
-    "version": "0.0.1",
-    "main": "index.js",
-    "dependencies": {
-        "cheerio": "0.16.0"
-    }
+  "name": "golden-parser",
+  "description": "Parse forum post in hkgolden.com for further processing.",
+  "author": "Mike Chung <mikechung4@gmail.com>",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:mcfung/GoldenParserJS.git"
+  },
+  "version": "0.0.1",
+  "main": "index.js",
+  "dependencies": {
+    "cheerio": "0.16.0"
+  },
+  "devDependencies": {
+    "grunt": "0.4.*",
+    "grunt-contrib-nodeunit": "^0.4.0",
+    "nodeunit": "^0.9.0"
+  },
+  "scripts": {
+    "test": "grunt"
+  }
 }

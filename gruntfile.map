@@ -1,0 +1,10 @@
+{
+  "version": 3,
+  "file": "gruntfile.js",
+  "sourceRoot": "",
+  "sources": [
+    "gruntfile.coffee"
+  ],
+  "names": [],
+  "mappings": ";AAAA;AAAA,EAAA,MAAM,CAAC,OAAP,GAAiB,SAAC,KAAD,GAAA;AAEf,IAAA,KAAK,CAAC,UAAN,CACE;AAAA,MAAA,UAAA,EACE;AAAA,QAAA,GAAA,EAAK,mBAAL;OADF;KADF,CAAA,CAAA;AAAA,IAIA,KAAK,CAAC,YAAN,CAAmB,wBAAnB,CAJA,CAAA;WAKA,KAAK,CAAC,YAAN,CAAmB,SAAnB,EAA8B,CAAC,UAAD,CAA9B,EAPe;EAAA,CAAjB,CAAA;AAAA"
+}

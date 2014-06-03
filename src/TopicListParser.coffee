@@ -11,6 +11,7 @@ class TopicListParser
         authorDom = $ '.TopicBox_Author', ele
         text = authorDom.text().trim()
         author = text.substring 0, text.indexOf "-"
+        author = author.trim()
         rating = parseInt(text.substring text.lastIndexOf(":") + 2, text.lastIndexOf(")"))
         {
         author: author
@@ -48,6 +49,6 @@ class TopicListParser
         totalNumberOfPage: totalNumberOfPage
         numberOfReplies: numberOfReplies
 
-      onCompleteCallback result
+    onCompleteCallback result
 
 module.exports = TopicListParser
