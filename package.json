@@ -1,0 +1,14 @@
+{
+    "name": "golden-parser",
+    "description": "Parse forum post in hkgolden.com for further processing.",
+    "author": "Mike Chung <mikechung4@gmail.com>",
+    "repository": {
+        "type": "git",
+        "url": "git@github.com:mcfung/GoldenParserJS.git"
+    },
+    "version": "0.0.1",
+    "main": "index.js",
+    "dependencies": {
+        "cheerio": "0.16.0"
+    }
+}
