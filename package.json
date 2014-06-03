@@ -13,6 +13,7 @@
   },
   "devDependencies": {
     "grunt": "0.4.*",
+    "grunt-cli": "^0.1.13",
     "grunt-contrib-nodeunit": "0.4.*",
     "nodeunit": "^0.9.0"
   },
