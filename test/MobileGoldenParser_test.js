@@ -14,6 +14,11 @@
         encoding: 'utf8'
       }, function(err, data) {
         test.ifError(err);
+        if (typeof console !== "undefined" && console !== null) {
+          if (typeof console.log === "function") {
+            console.log('it should build');
+          }
+        }
         return mobileGoldenParser.parseTopicList(data, function(topics) {
           var expected;
           expected = [

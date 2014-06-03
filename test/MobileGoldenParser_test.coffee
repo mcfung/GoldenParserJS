@@ -9,6 +9,7 @@ exports.MobileGoldenParser =
       encoding: 'utf8'
     }, (err, data) ->
       test.ifError err
+      console?.log? 'it should build'
       mobileGoldenParser.parseTopicList data, (topics) ->
         expected = [
           {
