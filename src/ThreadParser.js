@@ -16,25 +16,26 @@
       replies = $('.ReplyBox');
       result = [];
       replies.each(function() {
-        var author, authorDom, contentDom, gender, images;
+        var author, authorDom, contentDom, gender, images, prependDomainToImageSrc;
+        prependDomainToImageSrc = function(img) {
+          var src;
+          src = img.attr('src');
+          return img.attr('src', "http://" + subDomain + ".hkgolden.com" + src);
+        };
         authorDom = $('.ViewNameMale, .ViewNameFemale', this);
         if (authorDom.length > 0) {
           author = authorDom.text();
           gender = $('.ViewNameMale', this).length > 0 ? "male" : "female";
           contentDom = $($(this).children('div').get(1));
           $('img[src^="/faces"]', contentDom).each(function() {
-            var $this, src;
-            $this = $(this);
-            src = $this.attr('src');
-            return $this.attr('src', "http://" + subDomain + ".hkgolden.com" + src);
+            return prependDomainToImageSrc($(this));
           });
           images = [];
           $('img.Image', contentDom).each(function() {
-            var $this, imageSrc, src;
+            var $this, imageSrc;
             $this = $(this);
             $this.removeAttr('onclick');
-            src = $this.attr('src');
-            $this.attr('src', "http://" + subDomain + ".hkgolden.com" + src);
+            prependDomainToImageSrc($this);
             imageSrc = $this.attr('alt');
             imageSrc = imageSrc.substring(imageSrc.indexOf(']') + 1, imageSrc.lastIndexOf('['));
             $this.attr('img-src', imageSrc);

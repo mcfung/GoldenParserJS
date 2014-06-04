@@ -11,6 +11,12 @@ class ThreadParser
     replies = $ '.ReplyBox'
     result = []
     replies.each ->
+
+      prependDomainToImageSrc = (img) ->
+
+        src = img.attr 'src'
+        img.attr 'src', "http://#{subDomain}.hkgolden.com#{src}"
+
       authorDom = $ '.ViewNameMale, .ViewNameFemale', @
       if authorDom.length > 0
         author = authorDom.text()
@@ -18,16 +24,13 @@ class ThreadParser
         contentDom = $($(@).children('div').get(1))
 
         $('img[src^="/faces"]', contentDom).each ->
-          $this = $ @
-          src = $this.attr 'src'
-          $this.attr 'src', "http://#{subDomain}.hkgolden.com#{src}"
+          prependDomainToImageSrc $ @
 
         images = []
         $('img.Image', contentDom).each ->
           $this = $ @
           $this.removeAttr 'onclick'
-          src = $this.attr 'src'
-          $this.attr 'src', "http://#{subDomain}.hkgolden.com#{src}"
+          prependDomainToImageSrc $this
           imageSrc = $this.attr 'alt'
           imageSrc = imageSrc.substring imageSrc.indexOf(']') + 1, imageSrc.lastIndexOf('[')
           $this.attr 'img-src', imageSrc
