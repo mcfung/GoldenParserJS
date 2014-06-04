@@ -27,7 +27,7 @@ This is used to parse forum post in hkgolden.com for further processing.
 
 ## API
 
-### MobileGoldenParser
+### MobileGoldenParser (0.1.1)
 #### .parseTopicList(html, function(topics)) (0.1.1)
 
 This method parse the `html` of topic page of mobile golden forum to an array of JSON objects.
