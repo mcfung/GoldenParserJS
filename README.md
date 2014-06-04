@@ -65,7 +65,7 @@ The expected JSON object is as follows:
 ```
 The `content` will be returning encoded character so there will be something like `&#x99AC;`. It will be rendered as chinese in browser and this is the expected behavior.
 
-Any image wrapped by `[img][/img]` will be preprocessed such that `onclick` is removed and the actual image src will be added as ng-src attribute.
+Any image wrapped by `[img][/img]` will be preprocessed such that `onclick` is removed and the actual image src will be added as `ng-src` attribute.
 e.g.
 ```html
 <img class=\"Image\" src=\"http://m3.hkgolden.com/images/mobile/camera.png\" alt=\"[img]https://abc.com/abc.jpg[/img]\" ng-src=\"https://abc.com/abc.jpg\">
