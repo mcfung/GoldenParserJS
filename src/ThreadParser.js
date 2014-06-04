@@ -38,7 +38,7 @@
             prependDomainToImageSrc($this);
             imageSrc = $this.attr('alt');
             imageSrc = imageSrc.substring(imageSrc.indexOf(']') + 1, imageSrc.lastIndexOf('['));
-            $this.attr('img-src', imageSrc);
+            $this.attr('ng-src', imageSrc);
             return images.push(imageSrc);
           });
           return result.push({

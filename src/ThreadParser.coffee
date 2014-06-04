@@ -33,7 +33,7 @@ class ThreadParser
           prependDomainToImageSrc $this
           imageSrc = $this.attr 'alt'
           imageSrc = imageSrc.substring imageSrc.indexOf(']') + 1, imageSrc.lastIndexOf('[')
-          $this.attr 'img-src', imageSrc
+          $this.attr 'ng-src', imageSrc
           images.push imageSrc
 
         result.push
