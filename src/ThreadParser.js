@@ -17,6 +17,7 @@
       result.isNextPageAvailable = $('.View_PageSelectRight').text().trim() !== '';
       result.isPreviousPageAvailable = $('.View_PageSelectLeft').text().trim() !== '';
       result.totalNumberOfPage = $('option', $('select.View_PageSelect').get(0)).length - 2;
+      result.title = $('.ViewTitle').text().trim();
       replies = $('.ReplyBox');
       replies.each(function() {
         var author, authorDom, contentDom, date, gender, images, prependDomainToImageSrc;

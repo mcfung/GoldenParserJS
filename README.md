@@ -49,9 +49,9 @@ The expected JSON object is as follows:
 
 (since 0.1.3)
 
-`isNextPageAvailable` and `isPreviousPageAvailable` are added to the array to indicate if next or previous page is available.
+`isNextPageAvailable` and `isPreviousPageAvailable` are added to the array as a property to indicate if next or previous page is available.
 
-`totalNumberOfPage` is added to the array to indicate the total number of page of topics.
+`totalNumberOfPage` is added to the array as a property to indicate the total number of page of topics.
 
 #### .parseThread(html, function(result)) (0.1.1)
 
@@ -86,9 +86,11 @@ All faces icon will be preprocessed to use absolute URL.
 
 (since 0.1.3)
 
-`isNextPageAvailable` and `isPreviousPageAvailable` are added to the array to indicate if next or previous page is available.
+`isNextPageAvailable` and `isPreviousPageAvailable` are added to the array as a property to indicate if next or previous page is available.
 
-`totalNumberOfPage` is added to the array to indicate the total number of page of given thread.
+`totalNumberOfPage` is added to the array as a property to indicate the total number of page of given thread.
+
+`title` is added to the array as a property to indicate the title of the thread.
 
 
 ## Potential issues

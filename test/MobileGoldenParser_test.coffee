@@ -258,5 +258,6 @@ exports.MobileGoldenParser =
         expected.isNextPageAvailable = true
         expected.isPreviousPageAvailable = false
         expected.totalNumberOfPage = 3
+        expected.title = '[J出血][多圖]識食一定係食馬拉女'
         test.deepEqual result, expected
         test.done()
