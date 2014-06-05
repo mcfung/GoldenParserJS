@@ -12,6 +12,9 @@
       $ = cheerio.load(responseBody);
       topicDoms = $('.TopicBox_Details');
       result = [];
+      result.isNextPageAvailable = $('.View_PageSelectRight').text().trim() !== '';
+      result.isPreviousPageAvailable = $('.View_PageSelectLeft').text().trim() !== '';
+      result.totalNumberOfPage = $('option', $('select.View_PageSelect').get(0)).length;
       topicDoms.each(function() {
         var authorAndRating, getAuthorAndRating, getMessageId, getNumberOfReplies, getTitle, getTotalNumberOfPage, messageId, numberOfReplies, title, totalNumberOfPage;
         getAuthorAndRating = function(ele) {

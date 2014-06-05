@@ -13,10 +13,13 @@
       var $, replies, result, subDomain;
       $ = cheerio.load(responseBody);
       subDomain = domainList[Math.floor(Math.random() * domainList.length)];
-      replies = $('.ReplyBox');
       result = [];
+      result.isNextPageAvailable = $('.View_PageSelectRight').text().trim() !== '';
+      result.isPreviousPageAvailable = $('.View_PageSelectLeft').text().trim() !== '';
+      result.totalNumberOfPage = $('option', $('select.View_PageSelect').get(0)).length - 2;
+      replies = $('.ReplyBox');
       replies.each(function() {
-        var author, authorDom, contentDom, gender, images, prependDomainToImageSrc;
+        var author, authorDom, contentDom, date, gender, images, prependDomainToImageSrc;
         prependDomainToImageSrc = function(img) {
           var src;
           src = img.attr('src');
@@ -26,6 +29,7 @@
         if (authorDom.length > 0) {
           author = authorDom.text();
           gender = $('.ViewNameMale', this).length > 0 ? "male" : "female";
+          date = $('.ViewDate', this).text().trim();
           contentDom = $($(this).children('div').get(1));
           $('img[src^="/faces"]', contentDom).each(function() {
             return prependDomainToImageSrc($(this));
@@ -45,7 +49,8 @@
             author: author,
             gender: gender,
             content: contentDom.html(),
-            images: images
+            images: images,
+            date: date
           });
         }
       });

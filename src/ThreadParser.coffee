@@ -7,9 +7,11 @@ class ThreadParser
   parse: (responseBody, onCompleteCallback) ->
     $ = cheerio.load responseBody
     subDomain = domainList[Math.floor(Math.random() * domainList.length)]
-
-    replies = $ '.ReplyBox'
     result = []
+    result.isNextPageAvailable = $('.View_PageSelectRight').text().trim() isnt ''
+    result.isPreviousPageAvailable = $('.View_PageSelectLeft').text().trim() isnt ''
+    result.totalNumberOfPage = $('option', $('select.View_PageSelect').get(0)).length - 2
+    replies = $ '.ReplyBox'
     replies.each ->
 
       prependDomainToImageSrc = (img) ->
@@ -19,8 +21,10 @@ class ThreadParser
 
       authorDom = $ '.ViewNameMale, .ViewNameFemale', @
       if authorDom.length > 0
+
         author = authorDom.text()
         gender = if $('.ViewNameMale', @).length > 0 then "male" else "female"
+        date = $('.ViewDate', @).text().trim();
         contentDom = $($(@).children('div').get(1))
 
         $('img[src^="/faces"]', contentDom).each ->
@@ -41,6 +45,7 @@ class ThreadParser
           gender: gender
           content: contentDom.html()
           images: images
+          date: date
 
     onCompleteCallback result
 

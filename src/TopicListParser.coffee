@@ -6,6 +6,9 @@ class TopicListParser
     $ = cheerio.load responseBody
     topicDoms = $ '.TopicBox_Details'
     result = []
+    result.isNextPageAvailable = $('.View_PageSelectRight').text().trim() isnt ''
+    result.isPreviousPageAvailable = $('.View_PageSelectLeft').text().trim() isnt ''
+    result.totalNumberOfPage = $('option', $('select.View_PageSelect').get(0)).length
     topicDoms.each ->
       getAuthorAndRating = (ele) ->
         authorDom = $ '.TopicBox_Author', ele
