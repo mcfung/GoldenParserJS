@@ -65,7 +65,8 @@ The expected JSON object is as follows:
       author: 'someAuthor',
       gender: 'male',
       content: 'someContent',
-      images: ['http://example.com/example.jpg']
+      images: ['http://example.com/example.jpg'],
+      date: '6/3/2014 6:49 AM' // (since 0.1.3)
     }
 ]
 ```
@@ -91,7 +92,6 @@ All faces icon will be preprocessed to use absolute URL.
 `totalNumberOfPage` is added to the array as a property to indicate the total number of page of given thread.
 
 `title` is added to the array as a property to indicate the title of the thread.
-
 
 ## Potential issues
 
