@@ -15,6 +15,13 @@ class ThreadParser
     replies = $ '.ReplyBox'
     replies.each ->
 
+      getReplyIdFromDom = ->
+
+        quoteLink = $('.ViewAuthorPanel a', @).attr('href')
+        quoteLinkPattern = /(rid=[0-9]*)/g
+        rid = quoteLink.match(quoteLinkPattern)[0]
+        replyId = rid.substring(rid.indexOf('=') + 1)
+
       prependDomainToImageSrc = (img) ->
 
         src = img.attr 'src'
@@ -27,6 +34,8 @@ class ThreadParser
         gender = if $('.ViewNameMale', @).length > 0 then "male" else "female"
         date = $('.ViewDate', @).text().trim();
         contentDom = $($(@).children('div').get(1))
+
+        replyId = getReplyIdFromDom.call @
 
         $('img[src^="/faces"]', contentDom).each ->
           prependDomainToImageSrc $ @
@@ -47,6 +56,7 @@ class ThreadParser
           content: contentDom.html()
           images: images
           date: date
+          replyId: replyId
 
     onCompleteCallback result
 

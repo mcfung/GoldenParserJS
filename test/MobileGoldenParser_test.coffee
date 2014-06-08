@@ -65,7 +65,8 @@ exports.MobileGoldenParser =
                 "https://fbcdn-sphotos-c-a.akamaihd.net/hphotos-ak-xpa1/t1.0-9/10308803_636868833069953_378371863153312182_n.jpg",
                 "https://fbcdn-sphotos-e-a.akamaihd.net/hphotos-ak-xaf1/t1.0-9/1900166_593683997388437_800482416_n.jpg"
               ],
-              "date": "6/3/2014 1:02 AM"
+              "date": "6/3/2014 1:02 AM",
+              "replyId": "1"
             },
             {
               "author": "有客到",
@@ -82,126 +83,144 @@ exports.MobileGoldenParser =
                 "https://fbcdn-sphotos-f-a.akamaihd.net/hphotos-ak-xap1/t1.0-9/10276004_649368515150913_950882928561629018_n.jpg",
                 "http://photos-c.ak.instagram.com/hphotos-ak-xfp1/1170306_232844430210130_691814086_n.jpg"
               ],
-              "date": "6/3/2014 1:03 AM"
+              "date": "6/3/2014 1:03 AM",
+              "replyId": "179478576"
             },
             {
               "author": "一直等TY",
               "gender": "male",
               "content": "<img src=\"http://m3.hkgolden.com/faces/bomb.gif\" alt=\"[bomb]\" border=\"0\"> <img src=\"http://m3.hkgolden.com/faces/bomb.gif\" alt=\"[bomb]\" border=\"0\"> <img src=\"http://m3.hkgolden.com/faces/bomb.gif\" alt=\"[bomb]\" border=\"0\">",
               "images": [],
-              "date": "6/3/2014 1:05 AM"
+              "date": "6/3/2014 1:05 AM",
+              "replyId": "179478806"
             },
             {
               "author": "鬥快派報紙",
               "gender": "male",
               "content": "&#x6211;&#x90FD;&#x60F3;&#x8DDF;&#x4F62;&#x5730;&#x5B78;&#x82F1;&#x6587;",
               "images": [],
-              "date": "6/3/2014 1:05 AM"
+              "date": "6/3/2014 1:05 AM",
+              "replyId": "179478864"
             },
             {
               "author": "相川始Joker",
               "gender": "male",
               "content": "<img src=\"http://m3.hkgolden.com/faces/good.gif\" alt=\"#good#\" border=\"0\"> <img src=\"http://m3.hkgolden.com/faces/good.gif\" alt=\"#good#\" border=\"0\">",
               "images": [],
-              "date": "6/3/2014 1:06 AM"
+              "date": "6/3/2014 1:06 AM",
+              "replyId": "179479022"
             },
             {
               "author": "有客到",
               "gender": "male",
               "content": "<div class=\"ViewQuote\">&#x6211;&#x90FD;&#x60F3;&#x8DDF;&#x4F62;&#x5730;&#x5B78;&#x82F1;&#x6587;</div>\r<br>&#x6211;&#x771F;&#x4FC2;&#x79FB;&#x6C11;&#x53BB;&#x99AC;&#x62C9;&#x7B97;<img src=\"http://m3.hkgolden.com/faces/banghead.gif\" alt=\"[banghead]\" border=\"0\"> <img src=\"http://m3.hkgolden.com/faces/banghead.gif\" alt=\"[banghead]\" border=\"0\">",
               "images": [],
-              "date": "6/3/2014 1:12 AM"
+              "date": "6/3/2014 1:12 AM",
+              "replyId": "179479705"
             },
             {
               "author": "昆頓塔倫天奴",
               "gender": "male",
               "content": "<img src=\"http://m3.hkgolden.com/faces/tongue.gif\" alt=\":P\" border=\"0\">",
               "images": [],
-              "date": "6/3/2014 1:46 AM"
+              "date": "6/3/2014 1:46 AM",
+              "replyId": "179483501"
             },
             {
               "author": "迷牆",
               "gender": "male",
               "content": "&#x5481;&#x6B63;&#x90FD;&#x7121;&#x4EBA;&#x6B23;&#x8CDE;<img src=\"http://m3.hkgolden.com/faces/cry.gif\" alt=\":~(\" border=\"0\"> <img src=\"http://m3.hkgolden.com/faces/cry.gif\" alt=\":~(\" border=\"0\"> <img src=\"http://m3.hkgolden.com/faces/cry.gif\" alt=\":~(\" border=\"0\"> <img src=\"http://m3.hkgolden.com/faces/cry.gif\" alt=\":~(\" border=\"0\"> <img src=\"http://m3.hkgolden.com/faces/cry.gif\" alt=\":~(\" border=\"0\">",
               "images": [],
-              "date": "6/3/2014 2:18 AM"
+              "date": "6/3/2014 2:18 AM",
+              "replyId": "179486358"
             },
             {
               "author": "憑胸簫塞",
               "gender": "male",
               "content": "<img src=\"http://m3.hkgolden.com/faces/bomb.gif\" alt=\"[bomb]\" border=\"0\">",
               "images": [],
-              "date": "6/3/2014 2:44 AM"
+              "date": "6/3/2014 2:44 AM",
+              "replyId": "179488201"
             },
             {
               "author": "Shing身鳩毛",
               "gender": "male",
               "content": "&#x864E;&#x7259; &#x771F;&#x4FC2;&#x8CAA;&#x4F62;&#x5920;Young",
               "images": [],
-              "date": "6/3/2014 2:50 AM"
+              "date": "6/3/2014 2:50 AM",
+              "replyId": "179488652"
             },
             {
               "author": "無雨問蒼天",
               "gender": "male",
               "content": "&#x5514;&#x77E5;&#x7D93;&#x904E;&#x5E7E;&#x591A;&#x91CD;&#x65E2;PS&#x904E;&#x6FFE;&#x5148;&#x6703;&#x8B8A;&#x6210;&#x5481;....\r<br><img src=\"http://m3.hkgolden.com/faces/frown.gif\" alt=\":-(\" border=\"0\">",
               "images": [],
-              "date": "6/3/2014 3:35 AM"
+              "date": "6/3/2014 3:35 AM",
+              "replyId": "179490673"
             },
             {
               "author": "生生世世二五",
               "gender": "male",
               "content": "&#x8B58;&#x98DF;&#x4E00;&#x5B9A;&#x4FC2;&#x98DF;<span style=\"color: red;\">&#x975A;&#x5973;</span>",
               "images": [],
-              "date": "6/3/2014 3:37 AM"
+              "date": "6/3/2014 3:37 AM",
+              "replyId": "179490719"
             },
             {
               "author": "李長實",
               "gender": "male",
               "content": "&#x7559;&#x540D;",
               "images": [],
-              "date": "6/3/2014 3:40 AM"
+              "date": "6/3/2014 3:40 AM",
+              "replyId": "179490804"
             },
             {
               "author": "最後一分鐘",
               "gender": "male",
               "content": "<img src=\"http://m3.hkgolden.com/faces/smile.gif\" alt=\":)\" border=\"0\">",
               "images": [],
-              "date": "6/3/2014 3:43 AM"
+              "date": "6/3/2014 3:43 AM",
+              "replyId": "179490900"
             },
             {
               "author": "吊李思捷環球",
               "gender": "male",
               "content": "<img src=\"http://m3.hkgolden.com/faces/fire.gif\" alt=\"#fire#\" border=\"0\"> <img src=\"http://m3.hkgolden.com/faces/bomb.gif\" alt=\"[bomb]\" border=\"0\">",
               "images": [],
-              "date": "6/3/2014 3:45 AM"
+              "date": "6/3/2014 3:45 AM",
+              "replyId": "179490924"
             },
             {
               "author": "Liαr_Gαmer",
               "gender": "female",
               "content": "&#x7559;&#x540D;",
               "images": [],
-              "date": "6/3/2014 3:51 AM"
+              "date": "6/3/2014 3:51 AM",
+              "replyId": "179491084"
             },
             {
               "author": "冷帽毒角",
               "gender": "male",
               "content": "&#x7559;&#x540D;",
               "images": [],
-              "date": "6/3/2014 5:02 AM"
+              "date": "6/3/2014 5:02 AM",
+              "replyId": "179492557"
             },
             {
               "author": "C.馬壯",
               "gender": "male",
               "content": "&#x99AC;&#x62C9;&#x4EBA;&#x5481;&#x767D;&#x5AC1;&#x54A9;",
               "images": [],
-              "date": "6/3/2014 5:07 AM"
+              "date": "6/3/2014 5:07 AM",
+              "replyId": "179492621"
             },
             {
               "author": "阿姆羅_雷",
               "gender": "male",
               "content": "<div class=\"ViewQuote\">&#x99AC;&#x62C9;&#x4EBA;&#x5481;&#x767D;&#x5AC1;&#x54A9;</div>\r<br>&#x5E7E;&#x5343;&#x842C;&#x4EBA;&#x5165;&#x9762;&#x7E3D;&#x6709;1,2&#x500B;&#x65E2;,&#x6A13;&#x4E0A;&#x5C31;&#x4FC2;&#x597D;&#x4F8B;&#x5B50;",
               "images": [],
-              "date": "6/3/2014 5:09 AM"
+              "date": "6/3/2014 5:09 AM",
+              "replyId": "179492671"
             },
             {
               "author": "我隻貓叫貓貓",
@@ -210,49 +229,56 @@ exports.MobileGoldenParser =
               "images": [
                 "http://www3.pictures.zimbio.com/gi/Mandy Lieu F5fFcLxiB51m.jpg"
               ],
-              "date": "6/3/2014 5:12 AM"
+              "date": "6/3/2014 5:12 AM",
+              "replyId": "179492723"
             },
             {
               "author": "做咩柒姐你",
               "gender": "male",
               "content": "&#x5514;&#x71C3;&#x4FC2;&#x4E0B;<img src=\"http://m3.hkgolden.com/faces/yipes.gif\" alt=\"[yipes]\" border=\"0\"> &#x4E00;&#x500B;97 &#x4E00;&#x500B;96",
               "images": [],
-              "date": "6/3/2014 5:17 AM"
+              "date": "6/3/2014 5:17 AM",
+              "replyId": "179492794"
             },
             {
               "author": "如霧如電",
               "gender": "female",
               "content": "<img src=\"http://m3.hkgolden.com/faces/donno.gif\" alt=\"#ng#\" border=\"0\"> &#x5629;~ 96&#x5E74;&#x540C;97&#x5E74;? &#x5514;&#x4FC2;&#x8B1B;&#x771F;&#x4E0B;&#x561B;",
               "images": [],
-              "date": "6/3/2014 5:22 AM"
+              "date": "6/3/2014 5:22 AM",
+              "replyId": "179492866"
             },
             {
               "author": "神射手.藍斯",
               "gender": "male",
               "content": "&#x4EE5;&#x524D;&#x6709;&#x5973;&#x53CB;&#x4FC2;&#x99AC;&#x62C9;&#x59BA;<img src=\"http://m3.hkgolden.com/faces/bye.gif\" alt=\"#bye#\" border=\"0\">",
               "images": [],
-              "date": "6/3/2014 6:42 AM"
+              "date": "6/3/2014 6:42 AM",
+              "replyId": "179493653"
             },
             {
               "author": "契弟走得磨",
               "gender": "male",
               "content": "&#x7559;&#x540D;",
               "images": [],
-              "date": "6/3/2014 6:49 AM"
+              "date": "6/3/2014 6:49 AM",
+              "replyId": "179493719"
             },
             {
               "author": "小小明小小明",
               "gender": "female",
               "content": "<img src=\"http://m3.hkgolden.com/faces/369.gif\" alt=\"[369]\" border=\"0\">",
               "images": [],
-              "date": "6/3/2014 6:59 AM"
+              "date": "6/3/2014 6:59 AM",
+              "replyId": "179493861"
             },
             {
               "author": "黑囉囉",
               "gender": "male",
               "content": "&#x7559;&#x540D;",
               "images": [],
-              "date": "6/3/2014 7:42 AM"
+              "date": "6/3/2014 7:42 AM",
+              "replyId": "179494633"
             }
           ]
         expected.isNextPageAvailable = true

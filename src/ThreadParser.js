@@ -20,7 +20,14 @@
       result.title = $('.ViewTitle').text().trim();
       replies = $('.ReplyBox');
       replies.each(function() {
-        var author, authorDom, contentDom, date, gender, images, prependDomainToImageSrc;
+        var author, authorDom, contentDom, date, gender, getReplyIdFromDom, images, prependDomainToImageSrc, replyId;
+        getReplyIdFromDom = function() {
+          var quoteLink, quoteLinkPattern, replyId, rid;
+          quoteLink = $('.ViewAuthorPanel a', this).attr('href');
+          quoteLinkPattern = /(rid=[0-9]*)/g;
+          rid = quoteLink.match(quoteLinkPattern)[0];
+          return replyId = rid.substring(rid.indexOf('=') + 1);
+        };
         prependDomainToImageSrc = function(img) {
           var src;
           src = img.attr('src');
@@ -32,6 +39,7 @@
           gender = $('.ViewNameMale', this).length > 0 ? "male" : "female";
           date = $('.ViewDate', this).text().trim();
           contentDom = $($(this).children('div').get(1));
+          replyId = getReplyIdFromDom.call(this);
           $('img[src^="/faces"]', contentDom).each(function() {
             return prependDomainToImageSrc($(this));
           });
@@ -51,7 +59,8 @@
             gender: gender,
             content: contentDom.html(),
             images: images,
-            date: date
+            date: date,
+            replyId: replyId
           });
         }
       });

@@ -66,7 +66,8 @@ The expected JSON object is as follows:
       gender: 'male',
       content: 'someContent',
       images: ['http://example.com/example.jpg'],
-      date: '6/3/2014 6:49 AM' // (since 0.1.3)
+      date: '6/3/2014 6:49 AM', // (since 0.1.3)
+      replyId: '179492794' // (since 0.1.5)
     }
 ]
 ```
