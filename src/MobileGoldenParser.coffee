@@ -1,5 +1,6 @@
 TopicListParser = require './TopicListParser'
 ThreadParser = require './ThreadParser'
+TypeParser = require './TypeParser'
 
 class MobileGoldenParser
 
@@ -8,5 +9,8 @@ class MobileGoldenParser
 
   parseThread: (responseBody, onCompleteCallback) ->
     new ThreadParser().parse responseBody, onCompleteCallback
+
+  parseTypes: (responseBody, onCompleteCallback) ->
+    new TypeParser().parse responseBody, onCompleteCallback
 
 module.exports = MobileGoldenParser

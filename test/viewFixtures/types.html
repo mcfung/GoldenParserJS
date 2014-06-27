@@ -1,0 +1,355 @@
+
+
+<!DOCTYPE html PUBLIC "-//WAPFORUM//DTD XHTML Mobile 1.2//EN" "http://www.openmobilealliance.org/tech/DTD/xhtml-mobile12.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>香港高登討論區</title>
+<script type="text/javascript">
+//<![CDATA[
+try{if (!window.CloudFlare) {var CloudFlare=[{verbose:0,p:0,byc:0,owlid:"cf",bag2:1,mirage2:0,oracle:0,paths:{cloudflare:"/cdn-cgi/nexp/dokv=abba2f56bd/"},atok:"dacb85b8dabb2f6a4add446354190a06",petok:"e526bb7344303b368b315b9993c79ead1d93aa22-1403844373-1800",zone:"hkgolden.com",rocket:"0",apps:{"ga_key":{"ua":"UA-48961522-1","ga_bs":"2"}}}];!function(a,b){a=document.createElement("script"),b=document.getElementsByTagName("script")[0],a.async=!0,a.src="//ajax.cloudflare.com/cdn-cgi/nexp/dokv=97fb4d042e/cloudflare.min.js",b.parentNode.insertBefore(a,b)}()}}catch(e){};
+//]]>
+</script>
+<link href="/jscss/mobile.css" rel="StyleSheet" type="text/css" />
+    <script type="text/javascript" src="/jscss/mobile.js"></script>
+
+	<link href="css/custom-theme/jquery-ui-1.10.3.custom.css" rel="stylesheet" />
+	<script src="js/jquery-1.9.1.js"></script>
+	<script src="js/jquery-ui-1.10.3.custom.js"></script>
+    <script>
+        $(document).ready(function () {
+            $("#forumPanel").dialog({
+                autoOpen: false,
+                resizable: false,
+                width: 240,
+                height: 150,
+                draggable: false,
+                close: function () {
+                    $(".TransparentGrayBackground").fadeOut("slow");
+                    $("#forumPanel").dialog("close");
+                    return false;
+                }
+            }).parent().appendTo(jQuery("form:first"));
+
+            $("#forumPanel").bind('dialogclose', function (event) {
+                $(".TransparentGrayBackground").fadeOut("slow");
+                return false;
+            });
+
+            $("#openForumPanel").click(function (event) {
+                $(".TransparentGrayBackground").css({ "display": "" }).fadeIn("slow");
+                $("#forumPanel").dialog("open");               
+                return false;
+            });
+        });    
+    </script>
+<title>
+
+</title><script type="text/javascript">
+/* <![CDATA[ */
+var _gaq = _gaq || [];
+_gaq.push(['_setAccount', 'UA-48961522-1']);
+_gaq.push(['_trackPageview']);
+
+(function() {
+var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+})();
+
+(function(b){(function(a){"__CF"in b&&"DJS"in b.__CF?b.__CF.DJS.push(a):"addEventListener"in b?b.addEventListener("load",a,!1):b.attachEvent("onload",a)})(function(){"FB"in b&&"Event"in FB&&"subscribe"in FB.Event&&(FB.Event.subscribe("edge.create",function(a){_gaq.push(["_trackSocial","facebook","like",a])}),FB.Event.subscribe("edge.remove",function(a){_gaq.push(["_trackSocial","facebook","unlike",a])}),FB.Event.subscribe("message.send",function(a){_gaq.push(["_trackSocial","facebook","send",a])}));"twttr"in b&&"events"in twttr&&"bind"in twttr.events&&twttr.events.bind("tweet",function(a){if(a){var b;if(a.target&&a.target.nodeName=="IFRAME")a:{if(a=a.target.src){a=a.split("#")[0].match(/[^?=&]+=([^&]*)?/g);b=0;for(var c;c=a[b];++b)if(c.indexOf("url")===0){b=unescape(c.split("=")[1]);break a}}b=void 0}_gaq.push(["_trackSocial","twitter","tweet",b])}})})})(window);
+/* ]]> */
+</script>
+</head>
+<body>
+<div class = 'TransparentGrayBackground'></div>
+    <div>
+        <div class="MobileTopPanel">
+            <table width = "100%">
+                <tr>
+                    <td align = "left" valign = 'top' width = '98px'>
+						<a href="./Default.aspx"><img border="0" src="/images/mobile/mobile_logo2.png" /></a>
+					</td>
+					<td align = "left" valign = 'top'>
+                        <a href = '' id = 'openForumPanel'>選擇伺服器</a>
+                    </td>
+                    <td align = "right" valign = 'top'>
+                        [<a href="./login.aspx">登入</a>]
+                    </td>
+                </tr>
+            </table>          
+        </div>
+
+        
+<script language="JavaScript">
+<!--
+var ads = new Array(3);
+var google_ads = new Array();
+var google_ad;
+
+function google_ad_request_done(google_ads) {
+/*
+ * This function is required and is used to display
+ * the ads that are returned from the JavaScript
+ * request. You should modify the document.write
+ * commands so that the HTML they write out fits
+ * with your desired ad layout.
+ */
+var s = '';
+var i;
+var adsense_channel;
+adsense_channel = '9600841729';
+
+/*
+ * Verify that there are actually ads to display.
+ */
+
+if (google_ads.length == 0) {
+  return;
+}
+
+/*
+ * If an image or Flash ad is returned, display that ad.
+ * Otherwise, build a string containing all of the ads and
+ * then use a document.write() command to print that string.
+ */
+
+if (google_ads[0].type == "image") {
+  ads[0] = '<a href="' + google_ads[0].url +
+          '" target="_top" title="go to ' + google_ads[0].visible_url +
+          '"><img border="0" src="' + google_ads[0].image_url +
+          '"width="' + google_ads[0].image_width +
+         '"height="' + google_ads[0].image_height + '"></a>';
+
+} else if (google_ads[0].type == "flash") {
+  ads[0] = '<object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000"' +
+          ' codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=6,0,0,0"' +
+          ' WIDTH="' + google_ad.image_width +
+          '" HEIGHT="' + google_ad.image_height + '">' +
+          '<PARAM NAME="movie" VALUE="' + google_ad.image_url + '">' +
+          '<PARAM NAME="quality" VALUE="high">' +
+          '<PARAM NAME="AllowScriptAccess" VALUE="never">' +
+          '<EMBED src="' + google_ad.image_url +
+          '" WIDTH="' + google_ad.image_width +
+          '" HEIGHT="' + google_ad.image_height + 
+          '" TYPE="application/x-shockwave-flash"' + 
+          ' AllowScriptAccess="never" ' + 
+          ' PLUGINSPAGE="http://www.macromedia.com/go/getflashplayer"></EMBED></OBJECT>';
+
+} else if (google_ads[0].type="text") {
+        /*
+         * For text ads, append each ad to the string.
+         */
+        for(i=0; i < google_ads.length; i++) {
+            ads[i] = 
+'<table width="100%" border="0" cellspacing="0" cellpadding="5">' +
+'<tr><td style="text-align: left;" onclick="javascript:window.location=\'' + google_ads[i].url + '\';"><span class="googlelinkback2"><a href="' + google_info.feedback_url + '">Google 提供的廣告</a></span></td></tr>' +
+'<tr><td style="text-align: left; font-size:12pt;" onclick="javascript:window.location=\'' + google_ads[i].url + '\';">' +
+'<div style="text-align:left; ">' +
+'<a href="' + google_ads[i].url + '" ' + 'onmouseout="window.status=\'\'" ' + 'onmouseover="window.status=\'go to ' + google_ads[i].visible_url + '\' ;return true" ' + 'style="text-decoration:none">' +
+'<span style="color:#000000;text-decoration:font-size:12pt;text-align:center;">' +
+'<b>' + 
+google_ads[i].line1 + 
+'</b></span></a> ' + 
+'<span style="color:#000000;font-size:12pt;">' +
+google_ads[i].line2 +
+google_ads[i].line3 + 
+'</span> ' +
+'<a href="' + google_ads[i].url + '" ' + 'onmouseout="window.status=\'\'" ' + 'onmouseover="window.status=\'go to ' + google_ads[i].visible_url + '\' ;return true" ' + 'style="text-decoration:none">' +
+'<span style="font-size:12pt;">' +
+google_ads[i].visible_url +
+'</span></a></div></td>' +
+'</tr></table>';
+        }
+}
+
+return;
+}
+
+ google_ad_client = 'pub-1389340516477422'; // substitute your client_id
+ google_ad_channel = '9600841729';
+ google_ad_output = 'js';
+ google_max_num_ads = '3';
+ //google_page_url = 'http://www.hkgolden.com';
+ google_ad_type = 'text';
+ google_skip = '0';
+ google_language = 'zh-TW';
+ google_encoding = 'big5';
+ google_feedback = 'on';
+ google_safe = 'high';
+ 
+ google_adtest = 'off';
+
+  google_ad_section = 'default';
+// -->
+</script>
+
+<script language="JavaScript" src="http://pagead2.googlesyndication.com/pagead/show_ads.js"></script>
+
+  <div style="padding: 0px 4px 4px 4px;">
+  <div class="MainBoxTitle">
+    <img width="22" height="21" align="left" alt="" src="/images/mobile/p.jpg"/>
+    <div style="font-weight: bold; line-height: 20px;">熱門區</div>
+  </div>
+  <div class="MainBoxDetails" style="padding: 5px 5px 0px 5px;">
+    <div>
+      <a class="MainBoxLink" href="./topics.aspx?type=ET"><div>娛樂台</div></a>
+      <div class="DivDetailsSeperator"></div>
+      <a class="MainBoxLink" href="./topics.aspx?type=CA"><div>時事台</div></a>
+      <div class="DivDetailsSeperator"></div>
+      <a class="MainBoxLink" href="./topics.aspx?type=FN"><div>財經台</div></a>
+      <div class="DivDetailsSeperator"></div>
+      <a class="MainBoxLink" href="./topics.aspx?type=GM"><div>遊戲台</div></a>
+    </div>
+  </div>
+	<div>
+    <span id = "MsgInLineAd0">
+<span id="GenGoogleAd0" style="/*display:none;*/">
+                                <script type="text/javascript">
+                                if (ads[0] != undefined) {
+                                  document.write(ads[0]);
+                                }
+                                </script>
+                            </span>
+
+</span>
+	
+	</div>
+  <div class="MainBoxTitle" style="margin-top: 5px;">
+    <img width="22" height="21" align="left" alt="" src="/images/mobile/p.jpg"/>
+    <div style="font-weight: bold; line-height: 20px;">數碼區</div>
+  </div>
+  <div class="MainBoxDetails" style="padding: 5px 5px 0px 5px;">
+    <div>
+      <a class="MainBoxLink" href="./topics.aspx?type=HW"><div>硬件台</div></a>
+      <div class="DivDetailsSeperator"></div>
+      <a class="MainBoxLink" href="./topics.aspx?type=IN"><div>電訊台</div></a>
+      <div class="DivDetailsSeperator"></div>
+      <a class="MainBoxLink" href="./topics.aspx?type=SW"><div>軟件台</div></a>
+      <div class="DivDetailsSeperator"></div>
+      <a class="MainBoxLink" href="./topics.aspx?type=MP"><div>手機台</div></a>
+      <div class="DivDetailsSeperator"></div>
+      <a class="MainBoxLink" href="./topics.aspx?type=AP"><div>Apps台</div></a>
+    </div>
+  </div>
+   <span id = "MsgInLineAd1">
+<span id="GenGoogleAd1" style="/*display:none;*/">
+                                <script type="text/javascript">
+                                if (ads[1] != undefined) {
+                                  document.write(ads[1]);
+                                }
+                                </script>
+                            </span>
+
+</span>
+	
+  <div class="MainBoxTitle" style="margin-top: 5px;">
+    <img width="22" height="21" align="left" alt="" src="/images/mobile/p.jpg"/>
+    <div style="font-weight: bold; line-height: 20px;">消閒區</div>
+  </div>
+  <div class="MainBoxDetails" style="padding: 5px 5px 0px 5px;">
+    <div>
+      <a class="MainBoxLink" href="./topics.aspx?type=SP"><div>體育台</div></a>
+      <div class="DivDetailsSeperator"></div>
+      <a class="MainBoxLink" href="./topics.aspx?type=LV"><div>感情台</div></a>
+      <div class="DivDetailsSeperator"></div>
+      <a class="MainBoxLink" href="./topics.aspx?type=SY"><div>講故台</div></a>
+      <div class="DivDetailsSeperator"></div>
+      <a class="MainBoxLink" href="./topics.aspx?type=ED"><div>飲食台</div></a>
+      <div class="DivDetailsSeperator"></div>
+      <a class="MainBoxLink" href="./topics.aspx?type=PT"><div>寵物台</div></a>
+      <div class="DivDetailsSeperator"></div>
+      <a class="MainBoxLink" href="./topics.aspx?type=BB"><div>親子台</div></a>
+      <div class="DivDetailsSeperator"></div>
+      <a class="MainBoxLink" href="./topics.aspx?type=TR"><div>旅遊台</div></a>
+      <div class="DivDetailsSeperator"></div>
+      <a class="MainBoxLink" href="./topics.aspx?type=CO"><div>潮流台</div></a>
+      <div class="DivDetailsSeperator"></div>
+      <a class="MainBoxLink" href="./topics.aspx?type=AN"><div>動漫台</div></a>
+      <div class="DivDetailsSeperator"></div>
+      <a class="MainBoxLink" href="./topics.aspx?type=TO"><div>玩具台</div></a>
+      <div class="DivDetailsSeperator"></div>
+      <a class="MainBoxLink" href="./topics.aspx?type=MU"><div>音樂台</div></a>
+      <div class="DivDetailsSeperator"></div>
+      <a class="MainBoxLink" href="./topics.aspx?type=VI"><div>影視台</div></a>
+      <div class="DivDetailsSeperator"></div>
+      <a class="MainBoxLink" href="./topics.aspx?type=DC"><div>攝影台</div></a>
+      <div class="DivDetailsSeperator"></div>
+      <a class="MainBoxLink" href="./topics.aspx?type=ST"><div>學術台</div></a>
+      <div class="DivDetailsSeperator"></div>
+      <a class="MainBoxLink" href="./topics.aspx?type=WK"><div>上班台</div></a>
+      <div class="DivDetailsSeperator"></div>	  
+      <a class="MainBoxLink" href="./topics.aspx?type=TS"><div>汽車台</div></a>
+      <div class="DivDetailsSeperator"></div>
+      <a class="MainBoxLink" href="./topics.aspx?type=RA"><div>電　台</div></a>
+    </div>
+  </div>
+  <div>
+	<span id = "MsgInLineAd2">
+<span id="GenGoogleAd2" style="/*display:none;*/">
+                                <script type="text/javascript">
+                                if (ads[2] != undefined) {
+                                  document.write(ads[2]);
+                                }
+                                </script>
+                            </span>
+
+</span>
+	
+  </div>
+  <div class="MainBoxTitle" style="margin-top: 5px;">
+    <img width="22" height="21" align="left" alt="" src="/images/mobile/p.jpg"/>
+    <div style="font-weight: bold; line-height: 20px;">高登區</div>
+  </div>
+  <div class="MainBoxDetails" style="padding: 5px 5px 0px 5px;">
+    <div>
+      <a class="MainBoxLink" href="./topics.aspx?type=MB"><div>站務台</div></a>
+      <div class="DivDetailsSeperator"></div>
+      <a class="MainBoxLink" href="./topics.aspx?type=AC"><div>活動台</div></a>
+      <div class="DivDetailsSeperator"></div>
+      <a class="MainBoxLink" href="./topics.aspx?type=JT"><div>JTV台</div></a>
+      <div class="DivDetailsSeperator"></div>
+      <a class="MainBoxLink" href="./topics.aspx?type=EP"><div>創意台</div></a>
+      <div class="DivDetailsSeperator"></div>
+      <a class="MainBoxLink" href="./topics.aspx?type=BW"><div>吹水台</div></a>
+    </div>
+  </div>
+    
+	<div style = 'height:7px;'></div>
+	<div align="center"><iframe src='yahoo_ad.html' width = '300' height = '250' marginwidth = '0' marginheight = '0' frameborder = '0' scrolling = 'no'></iframe></div>					
+  </div>
+  <!--iis-->
+
+
+    </div>
+
+    <div class="FooterPanel">	
+        現上線用戶數量: 4,379/56,429<br />
+        &#169 2014 HKGolden.com. All Rights Reserved.<br />
+        <a class="terms_link" href="/terms.html">Terms and Conditions</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a class="__cf_email__" href="http://www.cloudflare.com/email-protection" data-cfemail="5d34333b321d35363a3231393833733e3230">[email&nbsp;protected]</a><script type="text/javascript">
+/* <![CDATA[ */
+(function(){try{var s,a,i,j,r,c,l,b=document.getElementsByTagName("script");l=b[b.length-1].previousSibling;a=l.getAttribute('data-cfemail');if(a){s='';r=parseInt(a.substr(0,2),16);for(j=2;a.length-j;j+=2){c=parseInt(a.substr(j,2),16)^r;s+=String.fromCharCode(c);}s=document.createTextNode(s);l.parentNode.replaceChild(s,l);}}catch(e){}})();
+/* ]]> */
+</script>
+    </div>
+
+        <div id = "forumPanel" title = "選擇伺服器">
+            <a href = 'http://m2.hkgolden.com/default.aspx'>非會員伺服器</a>
+            <div style = "height:7px;"></div>
+            <div class="DivDetailsSeperator"></div>
+            <div style = "height:7px;"></div>
+            <a href = 'http://m4.hkgolden.com/default.aspx'>會員伺服器</a>
+        </div>
+		
+<script type="text/javascript">
+	var gaJsHost = (("https:" == document.location.protocol) ? "https://" : "http://")
+	document.write(unescape("%3Cscript src='" + gaJsHost + "stats.g.doubleclick.net/dc.js' type='text/javascript'%3E%3C/script%3E"))
+</script>
+<script type="text/javascript">
+    try {
+        var pageTracker = _gat._getTracker("UA-5029867-6");
+        pageTracker._trackPageview();
+    } catch (err) { }
+</script>
+
+</body>
+</html>

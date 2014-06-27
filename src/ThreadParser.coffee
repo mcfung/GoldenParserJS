@@ -1,4 +1,3 @@
-#$ = require './Selector'
 cheerio = require "cheerio"
 domainList = ['m1', 'm2', 'm3']
 
