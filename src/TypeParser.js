@@ -8,16 +8,18 @@
     function TypeParser() {}
 
     TypeParser.prototype.parse = function(responseBody, onCompleteCallback) {
-      var $;
+      var $, result;
       $ = cheerio.load(responseBody);
-      return $('.MainBoxLink').each(function(i, ele) {
+      result = [];
+      $('.MainBoxLink').each(function(i, ele) {
         var self;
         self = $(ele);
-        return {
+        return result.push({
           name: self.text(),
-          key: self.attr('href').replace('http://m1.hkgolden.com/topics.aspx?type=', '').replace('http://m2.hkgolden.com/topics.aspx?type=', '').replace('http://m3.hkgolden.com/topics.aspx?type=', '')
-        };
+          key: self.attr('href').replace('./topics.aspx?type=', '')
+        });
       });
+      return onCompleteCallback(result);
     };
 
     return TypeParser;

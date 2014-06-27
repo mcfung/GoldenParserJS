@@ -5,11 +5,14 @@ class TypeParser
   parse: (responseBody, onCompleteCallback) ->
     $ = cheerio.load responseBody
 
+    result = []
     $('.MainBoxLink').each (i, ele)->
       self = $(ele)
-      {
+      result.push
         name: self.text()
-        key: self.attr('href').replace('http://m1.hkgolden.com/topics.aspx?type=', '').replace('http://m2.hkgolden.com/topics.aspx?type=', '').replace('http://m3.hkgolden.com/topics.aspx?type=', '')
-      }
+        key: self.attr('href').replace('./topics.aspx?type=', '')
+
+
+    onCompleteCallback result
 
 module.exports = TypeParser
