@@ -1,6 +1,6 @@
-TopicListParser = require './TopicListParser'
-ThreadParser = require './ThreadParser'
-TypeParser = require './TypeParser'
+TopicListParser = require './parser/TopicListParser'
+ThreadParser = require './parser/ThreadParser'
+TypeParser = require './parser/TypeParser'
 
 class MobileGoldenParser
 

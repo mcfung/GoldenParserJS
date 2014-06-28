@@ -1,0 +1,10 @@
+{
+  "version": 3,
+  "file": "domainList.js",
+  "sourceRoot": "",
+  "sources": [
+    "domainList.coffee"
+  ],
+  "names": [],
+  "mappings": ";AAAA;AAAA,MAAA,UAAA;;AAAA,EAAA,UAAA,GAAa,CAAC,IAAD,EAAO,IAAP,EAAa,IAAb,CAAb,CAAA;;AAAA,EACA,MAAM,CAAC,OAAP,GAAiB,UADjB,CAAA;AAAA"
+}

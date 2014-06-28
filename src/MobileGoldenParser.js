@@ -2,11 +2,11 @@
 (function() {
   var MobileGoldenParser, ThreadParser, TopicListParser, TypeParser;
 
-  TopicListParser = require('./TopicListParser');
+  TopicListParser = require('./parser/TopicListParser');
 
-  ThreadParser = require('./ThreadParser');
+  ThreadParser = require('./parser/ThreadParser');
 
-  TypeParser = require('./TypeParser');
+  TypeParser = require('./parser/TypeParser');
 
   MobileGoldenParser = (function() {
     function MobileGoldenParser() {}

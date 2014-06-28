@@ -1,11 +1,14 @@
-cheerio = require "cheerio"
-domainList = ['m1', 'm2', 'm3']
+cheerio = require("cheerio")
+domainList = require('../utils/domainList')
+MobileGoldenContentPreprocessor = require('../preprocessor/MobileGoldenContentPreprocessor')
 
 class ThreadParser
 
   parse: (responseBody, onCompleteCallback) ->
     $ = cheerio.load responseBody
     subDomain = domainList[Math.floor(Math.random() * domainList.length)]
+    contentPreprocessor = new MobileGoldenContentPreprocessor(subDomain)
+
     result = []
     result.isNextPageAvailable = $('.View_PageSelectRight').text().trim() isnt ''
     result.isPreviousPageAvailable = $('.View_PageSelectLeft').text().trim() isnt ''
@@ -19,12 +22,9 @@ class ThreadParser
         quoteLink = $('.ViewAuthorPanel a', @).attr('href')
         quoteLinkPattern = /(rid=[0-9]*)/g
         rid = quoteLink.match(quoteLinkPattern)[0]
-        replyId = rid.substring(rid.indexOf('=') + 1)
+        rid.substring(rid.indexOf('=') + 1)
 
-      prependDomainToImageSrc = (img) ->
-
-        src = img.attr 'src'
-        img.attr 'src', "http://#{subDomain}.hkgolden.com#{src}"
+      contentPreprocessor.preprocess(@)
 
       authorDom = $ '.ViewNameMale, .ViewNameFemale', @
       if authorDom.length > 0
@@ -36,17 +36,10 @@ class ThreadParser
 
         replyId = getReplyIdFromDom.call @
 
-        $('img[src^="/faces"]', contentDom).each ->
-          prependDomainToImageSrc $ @
-
         images = []
         $('img.Image', contentDom).each ->
           $this = $ @
-          $this.removeAttr 'onclick'
-          prependDomainToImageSrc $this
-          imageSrc = $this.attr 'alt'
-          imageSrc = imageSrc.substring imageSrc.indexOf(']') + 1, imageSrc.lastIndexOf('[')
-          $this.attr 'ng-src', imageSrc
+          imageSrc = $this.attr 'ng-src'
           images.push imageSrc
 
         result.push
