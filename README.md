@@ -6,7 +6,9 @@ GoldenParserJS
 This is used to parse forum post in hkgolden.com for further processing.
 
 ## Installation
-`npm install golden-parser`
+```
+npm install golden-parser
+```
 
 ## Usage
 
@@ -92,6 +94,21 @@ All faces icon will be preprocessed to use absolute URL.
 `totalNumberOfPage` is added to the array as a property to indicate the total number of page of given thread.
 
 `title` is added to the array as a property to indicate the title of the thread.
+
+#### .parseTypes(html, function(result)) (0.2.0)
+
+This method parse the `html` of forum types page of mobile golden forum to an array of JSON objects.
+Each JSON object represents a type.
+The array of JSON is then passed to the callback from the argument, which will be called when parse completed.
+The expected JSON object is as follows:
+```js
+[
+  {
+    name: '吹水台'
+    key: 'BW'
+  }
+]
+```
 
 ## Potential issues
 
