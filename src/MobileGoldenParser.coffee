@@ -1,8 +1,11 @@
 TopicListParser = require './parser/TopicListParser'
 ThreadParser = require './parser/ThreadParser'
 TypeParser = require './parser/TypeParser'
+helper = require './utils/helper'
 
 class MobileGoldenParser
+
+  constructor: ->
 
   parseTopicList: (responseBody, onCompleteCallback) ->
     new TopicListParser().parse responseBody, onCompleteCallback
