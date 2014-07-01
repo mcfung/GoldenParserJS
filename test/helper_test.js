@@ -23,6 +23,32 @@
         age: 10
       });
       return test.done();
+    },
+    'test null target': function(test) {
+      var result;
+      result = helper.extend(null, {
+        name: 'name'
+      });
+      test.deepEqual(result, {
+        name: 'name'
+      });
+      result = helper.extend(void 0, {
+        name: 'name'
+      });
+      test.deepEqual(result, {
+        name: 'name'
+      });
+      return test.done();
+    },
+    'test no extendee': function(test) {
+      var result;
+      result = helper.extend({
+        name: 'name'
+      });
+      test.deepEqual(result, {
+        name: 'name'
+      });
+      return test.done();
     }
   };
 
