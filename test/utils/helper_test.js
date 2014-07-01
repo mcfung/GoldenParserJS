@@ -2,15 +2,9 @@
 (function() {
   var helper;
 
-  helper = require('../src/utils/helper');
+  helper = require('../../src/utils/helper');
 
   exports.helper = {
-    setUp: function(done) {
-      return done();
-    },
-    tearDown: function(done) {
-      return done();
-    },
     'test extend objects': function(test) {
       var result;
       result = helper.extend({

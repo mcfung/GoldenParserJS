@@ -6,6 +6,10 @@
 
   module.exports.MobileGoldenParser = MobileGoldenParser;
 
+  module.exports.ContentPreprossor = require('./src/preprocessor/ContentPreprocessor');
+
+  module.exports.MobileGoldenContentPreprocessor = require('./src/preprocessor/MobileGoldenContentPreprocessor');
+
 }).call(this);
 
 //# sourceMappingURL=index.map

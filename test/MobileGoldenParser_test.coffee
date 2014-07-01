@@ -540,6 +540,56 @@ exports.MobileGoldenParser =
         test.deepEqual result, expected
         test.done()
 
+  'test parse thread with custom preprocessor': (test) ->
+
+    parser = require '../index'
+    cheerio = require('cheerio')
+    mobileGoldenParser = new parser.MobileGoldenParser({
+      contentPreprocessor: {
+        preprocess: (ele) ->
+          $ = cheerio.load(ele)
+          $(ele).empty()
+      }
+    })
+
+    fs.readFile './test/viewFixtures/thread.html', {
+      encoding: 'utf8'
+    }, (err, data) ->
+      test.ifError err
+      mobileGoldenParser.parseThread data, (result) ->
+
+        expected = []
+        expected.isNextPageAvailable = true
+        expected.isPreviousPageAvailable = false
+        expected.totalNumberOfPage = 3
+        expected.title = '[J出血][多圖]識食一定係食馬拉女'
+        test.deepEqual result, expected
+        test.done()
+
+  'test parse thread with custom preprocessor as function': (test) ->
+
+    parser = require '../index'
+    cheerio = require('cheerio')
+    mobileGoldenParser = new parser.MobileGoldenParser({
+      contentPreprocessor: (ele) ->
+          $ = cheerio.load(ele)
+          $(ele).empty()
+    })
+
+    fs.readFile './test/viewFixtures/thread.html', {
+      encoding: 'utf8'
+    }, (err, data) ->
+      test.ifError err
+      mobileGoldenParser.parseThread data, (result) ->
+
+        expected = []
+        expected.isNextPageAvailable = true
+        expected.isPreviousPageAvailable = false
+        expected.totalNumberOfPage = 3
+        expected.title = '[J出血][多圖]識食一定係食馬拉女'
+        test.deepEqual result, expected
+        test.done()
+
   'test parse types': (test) ->
     parser = require '../index'
     mobileGoldenParser = new parser.MobileGoldenParser()

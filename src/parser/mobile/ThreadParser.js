@@ -4,7 +4,7 @@
 
   cheerio = require("cheerio");
 
-  getImageSourceFromAlt = require('../utils/helper').getImageSourceFromAlt;
+  getImageSourceFromAlt = require('../../utils/helper').getImageSourceFromAlt;
 
   ThreadParser = (function() {
     function ThreadParser(preprocessor) {

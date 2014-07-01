@@ -1,10 +1,6 @@
-helper = require '../src/utils/helper'
+helper = require '../../src/utils/helper'
 
 exports.helper =
-  setUp: (done) ->
-    done()
-  tearDown: (done) ->
-    done()
   'test extend objects': (test) ->
     result = helper.extend {
         name: 'name'

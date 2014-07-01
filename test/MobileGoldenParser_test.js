@@ -461,6 +461,62 @@
         });
       });
     },
+    'test parse thread with custom preprocessor': function(test) {
+      var cheerio, mobileGoldenParser, parser;
+      parser = require('../index');
+      cheerio = require('cheerio');
+      mobileGoldenParser = new parser.MobileGoldenParser({
+        contentPreprocessor: {
+          preprocess: function(ele) {
+            var $;
+            $ = cheerio.load(ele);
+            return $(ele).empty();
+          }
+        }
+      });
+      return fs.readFile('./test/viewFixtures/thread.html', {
+        encoding: 'utf8'
+      }, function(err, data) {
+        test.ifError(err);
+        return mobileGoldenParser.parseThread(data, function(result) {
+          var expected;
+          expected = [];
+          expected.isNextPageAvailable = true;
+          expected.isPreviousPageAvailable = false;
+          expected.totalNumberOfPage = 3;
+          expected.title = '[J出血][多圖]識食一定係食馬拉女';
+          test.deepEqual(result, expected);
+          return test.done();
+        });
+      });
+    },
+    'test parse thread with custom preprocessor as function': function(test) {
+      var cheerio, mobileGoldenParser, parser;
+      parser = require('../index');
+      cheerio = require('cheerio');
+      mobileGoldenParser = new parser.MobileGoldenParser({
+        contentPreprocessor: function(ele) {
+          var $;
+          $ = cheerio.load(ele);
+          return $(ele).empty();
+        }
+      });
+      return fs.readFile('./test/viewFixtures/thread.html', {
+        encoding: 'utf8'
+      }, function(err, data) {
+        test.ifError(err);
+        return mobileGoldenParser.parseThread(data, function(result) {
+          var expected;
+          expected = [];
+          expected.isNextPageAvailable = true;
+          expected.isPreviousPageAvailable = false;
+          expected.totalNumberOfPage = 3;
+          expected.title = '[J出血][多圖]識食一定係食馬拉女';
+          test.deepEqual(result, expected);
+          return test.done();
+        });
+      });
+    },
     'test parse types': function(test) {
       var mobileGoldenParser, parser;
       parser = require('../index');

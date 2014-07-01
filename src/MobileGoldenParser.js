@@ -2,11 +2,11 @@
 (function() {
   var MobileGoldenContentPreprocessor, MobileGoldenParser, ThreadParser, TopicListParser, TypeParser, defaultOptions, domainList, extend, subDomain;
 
-  TopicListParser = require('./parser/TopicListParser');
+  TopicListParser = require('./parser/mobile/TopicListParser');
 
-  ThreadParser = require('./parser/ThreadParser');
+  ThreadParser = require('./parser/mobile/ThreadParser');
 
-  TypeParser = require('./parser/TypeParser');
+  TypeParser = require('./parser/mobile/TypeParser');
 
   extend = require('./utils/helper').extend;
 

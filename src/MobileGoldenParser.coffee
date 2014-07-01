@@ -1,6 +1,6 @@
-TopicListParser = require './parser/TopicListParser'
-ThreadParser = require './parser/ThreadParser'
-TypeParser = require './parser/TypeParser'
+TopicListParser = require './parser/mobile/TopicListParser'
+ThreadParser = require './parser/mobile/ThreadParser'
+TypeParser = require './parser/mobile/TypeParser'
 extend = require('./utils/helper').extend
 domainList = require('./utils/domainList')
 MobileGoldenContentPreprocessor = require('./preprocessor/MobileGoldenContentPreprocessor')

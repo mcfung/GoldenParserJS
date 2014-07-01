@@ -1,5 +1,5 @@
 cheerio = require("cheerio")
-getImageSourceFromAlt = require('../utils/helper').getImageSourceFromAlt
+getImageSourceFromAlt = require('../../utils/helper').getImageSourceFromAlt
 
 class ThreadParser
 
