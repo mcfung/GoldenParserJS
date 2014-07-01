@@ -1,13 +1,13 @@
 cheerio = require("cheerio")
-domainList = require('../utils/domainList')
-MobileGoldenContentPreprocessor = require('../preprocessor/MobileGoldenContentPreprocessor')
+getImageSourceFromAlt = require('../utils/helper').getImageSourceFromAlt
 
 class ThreadParser
 
+  constructor: (@preprocessor) ->
+
   parse: (responseBody, onCompleteCallback) ->
     $ = cheerio.load responseBody
-    subDomain = domainList[Math.floor(Math.random() * domainList.length)]
-    contentPreprocessor = new MobileGoldenContentPreprocessor(subDomain)
+    contentPreprocessor = @preprocessor
 
     result = []
     result.isNextPageAvailable = $('.View_PageSelectRight').text().trim() isnt ''
@@ -24,7 +24,10 @@ class ThreadParser
         rid = quoteLink.match(quoteLinkPattern)[0]
         rid.substring(rid.indexOf('=') + 1)
 
-      contentPreprocessor.preprocess(@)
+      if typeof contentPreprocessor is 'function'
+        contentPreprocessor(@)
+      else
+        contentPreprocessor?.preprocess?(@)
 
       authorDom = $ '.ViewNameMale, .ViewNameFemale', @
       if authorDom.length > 0
@@ -39,8 +42,7 @@ class ThreadParser
         images = []
         $('img.Image', contentDom).each ->
           $this = $ @
-          imageSrc = $this.attr 'ng-src'
-          images.push imageSrc
+          images.push getImageSourceFromAlt($this)
 
         result.push
           author: author

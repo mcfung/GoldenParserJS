@@ -22,6 +22,12 @@
     return extend.apply(this, [target].concat(nextIterationSources));
   };
 
+  exports.getImageSourceFromAlt = function($img) {
+    var imageSrc;
+    imageSrc = $img.attr('alt');
+    return imageSrc = imageSrc.substring(imageSrc.indexOf(']') + 1, imageSrc.lastIndexOf('['));
+  };
+
 }).call(this);
 
 //# sourceMappingURL=helper.map

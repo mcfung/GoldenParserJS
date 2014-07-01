@@ -1,5 +1,6 @@
 cheerio = require('cheerio')
 ContentPreprocessor = require('./ContentPreprocessor')
+getImageSourceFromAlt = require('../utils/helper').getImageSourceFromAlt
 
 class MobileGoldenContentPreprocessor extends ContentPreprocessor
 
@@ -12,8 +13,6 @@ class MobileGoldenContentPreprocessor extends ContentPreprocessor
       $this = $ @
       $this.removeAttr 'onclick'
       preprocessor.prependDomainToImageSrc $this
-      imageSrc = $this.attr 'alt'
-      imageSrc = imageSrc.substring imageSrc.indexOf(']') + 1, imageSrc.lastIndexOf('[')
-      $this.attr 'ng-src', imageSrc
+      $this.attr 'ng-src', getImageSourceFromAlt($this)
 
 module.exports = MobileGoldenContentPreprocessor

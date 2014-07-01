@@ -11,3 +11,8 @@ extend = exports.extend = (target, sources...) ->
     target[key] = val
 
   extend.apply(@, [target].concat(nextIterationSources))
+
+exports.getImageSourceFromAlt = ($img) ->
+
+  imageSrc = $img.attr 'alt'
+  imageSrc = imageSrc.substring imageSrc.indexOf(']') + 1, imageSrc.lastIndexOf('[')
