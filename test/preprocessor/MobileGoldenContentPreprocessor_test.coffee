@@ -1,4 +1,4 @@
-MobileGoldenContentPreprocessor = require('../../src/preprocessor/MobileGoldenContentPreprocessor')
+MobileGoldenContentPreprocessor = require('../../index').MobileGoldenContentPreprocessor
 cheerio = require('cheerio')
 getImageSourceFromAlt = require('../../src/utils/helper').getImageSourceFromAlt
 fs = require('fs')

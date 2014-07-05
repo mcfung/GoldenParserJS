@@ -14,7 +14,11 @@ npm install golden-parser
 
 ```js
     var parser = require('golden-parser'),
-        mobileGoldenParser = new parser.MobileGoldenParser(),
+        mobileGoldenParser = new parser.MobileGoldenParser({
+            preprocessor: function(contentElement) {
+                // do something here
+            }
+        }),
         fs = require('fs')
 
     // src of html, e.g. from a file
@@ -29,6 +33,19 @@ npm install golden-parser
 ## API
 
 ### MobileGoldenParser (0.1.1)
+
+Create a parser object to parse the HTML.
+
+### MobileGoldenParser(options) (0.2.0)
+
+Create a parser object with options to parse the HTML.
+Available options:
+
+* preprocessor (default: `new ContentPreprocess()`)
+
+    function(element, $) or object with preprocess(element, $) method
+This is used to preprocess each reply in thread. `element` given is the DOMElement of the processing reply and $ is the cheerio object of the whole page.
+
 #### .parseTopicList(html, function(topics)) (0.1.1)
 
 This method parse the `html` of topic page of mobile golden forum to an array of JSON objects.
@@ -109,6 +126,63 @@ The expected JSON object is as follows:
   }
 ]
 ```
+
+### ContentPreprocessor(subDomain) (0.2.0)
+
+```js
+    var parser = require('golden-parser'),
+        ContentPreprocessor = new parser.ContentPreprocessor("m3"),      
+        mobileGoldenParser = new parser.MobileGoldenParser({
+            preprocessor: contentPreprocessor
+        }),
+        fs = require('fs')
+
+    // src of html, e.g. from a file
+    fs.readFile('./topics.html', {
+          encoding: 'utf8'
+        }, function(err, html) {
+            mobileGoldenParser.parseTopicList(html, function(topics) {
+            });
+        });
+```
+
+#### .preprocess(element, $)
+
+This method will prepend `http://#{@subDomain}.hkgolden.com` to the source of all image which source is start with `/faces` which would be the face icon in golden such that all face icon will be using absolute URL.
+It is a coffeescript class so you can extends this class easily for more preprocessing.
+
+#### .prependDomainToImageSrc(img)
+
+This method will prepend `http://#{@subDomain}.hkgolden.com` to the source of given image cheerio object                                     
+
+### MobileGoldenContentPreprocessor(subDomain) (0.2.0)
+
+This is subclass of ContentPreprocessor.
+
+```js
+    var parser = require('golden-parser'),
+        ContentPreprocessor = new parser.MobileGoldenContentPreprocessor("m3"),      
+        mobileGoldenParser = new parser.MobileGoldenParser({
+            preprocessor: contentPreprocessor
+        }),
+        fs = require('fs')
+
+    // src of html, e.g. from a file
+    fs.readFile('./topics.html', {
+          encoding: 'utf8'
+        }, function(err, html) {
+            mobileGoldenParser.parseTopicList(html, function(topics) {
+            });
+        });
+```
+
+#### .preprocess(element, $)
+
+In addition to the behavior of its super class, it finds all image of class Image, remove its onclick attribute and prepend `http://#{@subDomain}.hkgolden.com` to the source. Extract the actual image source from alt and put it in ng-src directive.
+  
+#### .prependDomainToImageSrc(img)
+
+Same as its super class.
 
 ## Potential issues
 

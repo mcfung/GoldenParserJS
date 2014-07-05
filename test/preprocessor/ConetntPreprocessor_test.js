@@ -2,7 +2,7 @@
 (function() {
   var ContentPreprocessor, cheerio, fs;
 
-  ContentPreprocessor = require('../../src/preprocessor/ContentPreprocessor');
+  ContentPreprocessor = require('../../index').ContentPreprossor;
 
   cheerio = require('cheerio');
 

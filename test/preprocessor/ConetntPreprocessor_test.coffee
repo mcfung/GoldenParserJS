@@ -1,4 +1,4 @@
-ContentPreprocessor = require('../../src/preprocessor/ContentPreprocessor')
+ContentPreprocessor = require('../../index').ContentPreprossor
 cheerio = require('cheerio')
 fs = require('fs')
 

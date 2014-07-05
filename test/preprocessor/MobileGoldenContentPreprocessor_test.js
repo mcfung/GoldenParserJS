@@ -2,7 +2,7 @@
 (function() {
   var MobileGoldenContentPreprocessor, cheerio, fs, getImageSourceFromAlt;
 
-  MobileGoldenContentPreprocessor = require('../../src/preprocessor/MobileGoldenContentPreprocessor');
+  MobileGoldenContentPreprocessor = require('../../index').MobileGoldenContentPreprocessor;
 
   cheerio = require('cheerio');
 
