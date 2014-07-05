@@ -17,7 +17,7 @@
   subDomain = domainList[Math.floor(Math.random() * domainList.length)];
 
   defaultOptions = {
-    contentPreprocessor: new MobileGoldenContentPreprocessor(subDomain)
+    contentPreprocessors: [new MobileGoldenContentPreprocessor(subDomain)]
   };
 
   MobileGoldenParser = (function() {
@@ -30,7 +30,7 @@
     };
 
     MobileGoldenParser.prototype.parseThread = function(responseBody, onCompleteCallback) {
-      return new ThreadParser(this.options.contentPreprocessor).parse(responseBody, onCompleteCallback);
+      return new ThreadParser(this.options.contentPreprocessors).parse(responseBody, onCompleteCallback);
     };
 
     MobileGoldenParser.prototype.parseTypes = function(responseBody, onCompleteCallback) {

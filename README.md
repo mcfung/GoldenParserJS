@@ -41,10 +41,10 @@ Create a parser object to parse the HTML.
 Create a parser object with options to parse the HTML.
 Available options:
 
-* preprocessor (default: `new ContentPreprocess()`)
+* contentPreprocessors (default: `[new ContentPreprocess()]`)
 
-    function(element, $) or object with preprocess(element, $) method
-This is used to preprocess each reply in thread. `element` given is the DOMElement of the processing reply and $ is the cheerio object of the whole page.
+    array of function(element, $) or object with preprocess(element, $) method
+Each reply will be preprocessed by each preprocessor. `element` given is the DOMElement of the processing reply and $ is the cheerio object of the whole page.
 
 #### .parseTopicList(html, function(topics)) (0.1.1)
 

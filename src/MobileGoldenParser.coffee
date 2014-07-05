@@ -7,7 +7,7 @@ MobileGoldenContentPreprocessor = require('./preprocessor/MobileGoldenContentPre
 
 subDomain = domainList[Math.floor(Math.random() * domainList.length)]
 defaultOptions =
-  contentPreprocessor: new MobileGoldenContentPreprocessor(subDomain)
+  contentPreprocessors: [new MobileGoldenContentPreprocessor(subDomain)]
 
 class MobileGoldenParser
 
@@ -18,7 +18,7 @@ class MobileGoldenParser
     new TopicListParser().parse responseBody, onCompleteCallback
 
   parseThread: (responseBody, onCompleteCallback) ->
-    new ThreadParser(@options.contentPreprocessor).parse responseBody, onCompleteCallback
+    new ThreadParser(@options.contentPreprocessors).parse responseBody, onCompleteCallback
 
   parseTypes: (responseBody, onCompleteCallback) ->
     new TypeParser().parse responseBody, onCompleteCallback

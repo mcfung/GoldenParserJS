@@ -7,14 +7,14 @@
   getImageSourceFromAlt = require('../../utils/helper').getImageSourceFromAlt;
 
   ThreadParser = (function() {
-    function ThreadParser(preprocessor) {
-      this.preprocessor = preprocessor;
+    function ThreadParser(preprocessors) {
+      this.preprocessors = preprocessors;
     }
 
     ThreadParser.prototype.parse = function(responseBody, onCompleteCallback) {
-      var $, contentPreprocessor, replies, result;
+      var $, preprocessors, replies, result;
       $ = cheerio.load(responseBody);
-      contentPreprocessor = this.preprocessor;
+      preprocessors = this.preprocessors;
       result = [];
       result.isNextPageAvailable = $('.View_PageSelectRight').text().trim() !== '';
       result.isPreviousPageAvailable = $('.View_PageSelectLeft').text().trim() !== '';
@@ -22,7 +22,7 @@
       result.title = $('.ViewTitle').text().trim();
       replies = $('.ReplyBox');
       replies.each(function() {
-        var author, authorDom, contentDom, date, gender, getReplyIdFromDom, images, replyId;
+        var author, authorDom, contentDom, contentPreprocessor, date, gender, getReplyIdFromDom, images, replyId, _i, _len;
         getReplyIdFromDom = function() {
           var quoteLink, quoteLinkPattern, rid;
           quoteLink = $('.ViewAuthorPanel a', this).attr('href');
@@ -30,12 +30,15 @@
           rid = quoteLink.match(quoteLinkPattern)[0];
           return rid.substring(rid.indexOf('=') + 1);
         };
-        if (typeof contentPreprocessor === 'function') {
-          contentPreprocessor(this, $);
-        } else {
-          if (contentPreprocessor != null) {
-            if (typeof contentPreprocessor.preprocess === "function") {
-              contentPreprocessor.preprocess(this, $);
+        for (_i = 0, _len = preprocessors.length; _i < _len; _i++) {
+          contentPreprocessor = preprocessors[_i];
+          if (typeof contentPreprocessor === 'function') {
+            contentPreprocessor(this, $);
+          } else {
+            if (contentPreprocessor != null) {
+              if (typeof contentPreprocessor.preprocess === "function") {
+                contentPreprocessor.preprocess(this, $);
+              }
             }
           }
         }

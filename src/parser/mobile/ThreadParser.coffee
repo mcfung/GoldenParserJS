@@ -3,12 +3,12 @@ getImageSourceFromAlt = require('../../utils/helper').getImageSourceFromAlt
 
 class ThreadParser
 
-  constructor: (@preprocessor) ->
+  constructor: (@preprocessors) ->
 
   parse: (responseBody, onCompleteCallback) ->
     $ = cheerio.load responseBody
-    contentPreprocessor = @preprocessor
 
+    preprocessors = @preprocessors
     result = []
     result.isNextPageAvailable = $('.View_PageSelectRight').text().trim() isnt ''
     result.isPreviousPageAvailable = $('.View_PageSelectLeft').text().trim() isnt ''
@@ -24,10 +24,11 @@ class ThreadParser
         rid = quoteLink.match(quoteLinkPattern)[0]
         rid.substring(rid.indexOf('=') + 1)
 
-      if typeof contentPreprocessor is 'function'
-        contentPreprocessor(@, $)
-      else
-        contentPreprocessor?.preprocess?(@, $)
+      for contentPreprocessor in preprocessors
+        if typeof contentPreprocessor is 'function'
+          contentPreprocessor(@, $)
+        else
+          contentPreprocessor?.preprocess?(@, $)
 
       authorDom = $ '.ViewNameMale, .ViewNameFemale', @
       if authorDom.length > 0

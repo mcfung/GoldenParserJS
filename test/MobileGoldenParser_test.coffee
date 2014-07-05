@@ -293,7 +293,7 @@ exports.MobileGoldenParser =
 
     parser = require '../index'
     mobileGoldenParser = new parser.MobileGoldenParser({
-      contentPreprocessor: null
+      contentPreprocessors: []
     })
 
     fs.readFile './test/viewFixtures/thread.html', {
@@ -545,11 +545,41 @@ exports.MobileGoldenParser =
     parser = require '../index'
     cheerio = require('cheerio')
     mobileGoldenParser = new parser.MobileGoldenParser({
-      contentPreprocessor: {
+      contentPreprocessors: [{
         preprocess: (ele) ->
           $ = cheerio.load(ele)
           $(ele).empty()
-      }
+      }]
+    })
+
+    fs.readFile './test/viewFixtures/thread.html', {
+      encoding: 'utf8'
+    }, (err, data) ->
+      test.ifError err
+      mobileGoldenParser.parseThread data, (result) ->
+
+        expected = []
+        expected.isNextPageAvailable = true
+        expected.isPreviousPageAvailable = false
+        expected.totalNumberOfPage = 3
+        expected.title = '[J出血][多圖]識食一定係食馬拉女'
+        test.deepEqual result, expected
+        test.done()
+
+  'test parse thread with multiple preprocessor': (test) ->
+
+    parser = require '../index'
+    cheerio = require('cheerio')
+    test.expect 35
+    mobileGoldenParser = new parser.MobileGoldenParser({
+      contentPreprocessors: [{
+        preprocess: (ele) ->
+          $ = cheerio.load(ele)
+          $(ele).empty();
+      }, {
+        preprocess: (ele) ->
+          test.ok(true);
+      }]
     })
 
     fs.readFile './test/viewFixtures/thread.html', {
@@ -571,9 +601,10 @@ exports.MobileGoldenParser =
     parser = require '../index'
     cheerio = require('cheerio')
     mobileGoldenParser = new parser.MobileGoldenParser({
-      contentPreprocessor: (ele) ->
+      contentPreprocessors: [(ele) ->
           $ = cheerio.load(ele)
           $(ele).empty()
+        ]
     })
 
     fs.readFile './test/viewFixtures/thread.html', {
