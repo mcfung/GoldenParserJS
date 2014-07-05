@@ -18,7 +18,7 @@ exports.MobileGoldenContentPreprocessor =
         test.ok($('img.Image', @).attr('ng-src') is undefined)
         test.ok($('img.Image', @).attr('onclick') isnt undefined)
         originalAlt = $('img.Image', @).attr('alt')
-        contentPreprocessor.preprocess(@)
+        contentPreprocessor.preprocess(@, $)
         test.equal($('img.Image', @).attr('ng-src'), (originalAlt.substring originalAlt.indexOf(']') + 1, originalAlt.lastIndexOf('[')))
         test.ok($('img.Image', @).attr('onclick') is undefined)
       test.done()

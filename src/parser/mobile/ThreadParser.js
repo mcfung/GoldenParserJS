@@ -31,11 +31,11 @@
           return rid.substring(rid.indexOf('=') + 1);
         };
         if (typeof contentPreprocessor === 'function') {
-          contentPreprocessor(this);
+          contentPreprocessor(this, $);
         } else {
           if (contentPreprocessor != null) {
             if (typeof contentPreprocessor.preprocess === "function") {
-              contentPreprocessor.preprocess(this);
+              contentPreprocessor.preprocess(this, $);
             }
           }
         }

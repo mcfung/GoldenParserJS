@@ -1,14 +1,11 @@
-cheerio = require("cheerio")
-
 class ContentPreprocessor
 
   constructor: (@subDomain) ->
 
-  preprocess: (ele) ->
-    $ = cheerio.load(ele)
+  preprocess: (ele, $) ->
 
     preprocessor = @
-    $('img[src^="/faces"]').each ->
+    $(ele).find('img[src^="/faces"]').each ->
       preprocessor.prependDomainToImageSrc $ @
 
   prependDomainToImageSrc: (img) ->

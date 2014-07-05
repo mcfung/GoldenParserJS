@@ -25,9 +25,9 @@ class ThreadParser
         rid.substring(rid.indexOf('=') + 1)
 
       if typeof contentPreprocessor is 'function'
-        contentPreprocessor(@)
+        contentPreprocessor(@, $)
       else
-        contentPreprocessor?.preprocess?(@)
+        contentPreprocessor?.preprocess?(@, $)
 
       authorDom = $ '.ViewNameMale, .ViewNameFemale', @
       if authorDom.length > 0

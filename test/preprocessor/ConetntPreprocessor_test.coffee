@@ -16,7 +16,7 @@ exports.ContentPreprocessor =
       $('.ReplyBox').each ->
         numberOfFaces = $('img[src^="/faces"]', @).length
         test.ok(numberOfFaces isnt 0)
-        contentPreprocessor.preprocess(@)
+        contentPreprocessor.preprocess(@, $)
         test.ok($('img[src^="/faces"]', @).length is 0)
         test.ok($("img[src^=\"http://#{subDomain}.hkgolden.com/faces\"]", @).length is numberOfFaces)
       test.done()

@@ -23,7 +23,7 @@
           var numberOfFaces;
           numberOfFaces = $('img[src^="/faces"]', this).length;
           test.ok(numberOfFaces !== 0);
-          contentPreprocessor.preprocess(this);
+          contentPreprocessor.preprocess(this, $);
           test.ok($('img[src^="/faces"]', this).length === 0);
           return test.ok($("img[src^=\"http://" + subDomain + ".hkgolden.com/faces\"]", this).length === numberOfFaces);
         });

@@ -26,7 +26,7 @@
           test.ok($('img.Image', this).attr('ng-src') === void 0);
           test.ok($('img.Image', this).attr('onclick') !== void 0);
           originalAlt = $('img.Image', this).attr('alt');
-          contentPreprocessor.preprocess(this);
+          contentPreprocessor.preprocess(this, $);
           test.equal($('img.Image', this).attr('ng-src'), originalAlt.substring(originalAlt.indexOf(']') + 1, originalAlt.lastIndexOf('[')));
           return test.ok($('img.Image', this).attr('onclick') === void 0);
         });
