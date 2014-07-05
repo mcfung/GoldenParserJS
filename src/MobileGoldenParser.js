@@ -26,10 +26,33 @@
     }
 
     MobileGoldenParser.prototype.parseTopicList = function(responseBody, onCompleteCallback) {
-      return new TopicListParser().parse(responseBody, onCompleteCallback);
+      return this.parseTopics(responseBody, function(result) {
+        var legacyResult;
+        legacyResult = result.topics;
+        legacyResult.isNextPageAvailable = result.isNextPageAvailable;
+        legacyResult.isPreviousPageAvailable = result.isPreviousPageAvailable;
+        legacyResult.totalNumberOfPage = result.totalNumberOfPage;
+        return onCompleteCallback(legacyResult);
+      });
     };
 
     MobileGoldenParser.prototype.parseThread = function(responseBody, onCompleteCallback) {
+      return this.parseThreadContent(responseBody, function(result) {
+        var legacyResult;
+        legacyResult = result.replies;
+        legacyResult.isNextPageAvailable = result.isNextPageAvailable;
+        legacyResult.isPreviousPageAvailable = result.isPreviousPageAvailable;
+        legacyResult.totalNumberOfPage = result.totalNumberOfPage;
+        legacyResult.title = result.title;
+        return onCompleteCallback(legacyResult);
+      });
+    };
+
+    MobileGoldenParser.prototype.parseTopics = function(responseBody, onCompleteCallback) {
+      return new TopicListParser().parse(responseBody, onCompleteCallback);
+    };
+
+    MobileGoldenParser.prototype.parseThreadContent = function(responseBody, onCompleteCallback) {
       return new ThreadParser(this.options.contentPreprocessors).parse(responseBody, onCompleteCallback);
     };
 

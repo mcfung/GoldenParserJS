@@ -15,11 +15,13 @@
       var $, preprocessors, replies, result;
       $ = cheerio.load(responseBody);
       preprocessors = this.preprocessors;
-      result = [];
-      result.isNextPageAvailable = $('.View_PageSelectRight').text().trim() !== '';
-      result.isPreviousPageAvailable = $('.View_PageSelectLeft').text().trim() !== '';
-      result.totalNumberOfPage = $('option', $('select.View_PageSelect').get(0)).length - 2;
-      result.title = $('.ViewTitle').text().trim();
+      result = {
+        isNextPageAvailable: $('.View_PageSelectRight').text().trim() !== '',
+        isPreviousPageAvailable: $('.View_PageSelectLeft').text().trim() !== '',
+        totalNumberOfPage: $('option', $('select.View_PageSelect').get(0)).length - 2,
+        title: $('.ViewTitle').text().trim(),
+        replies: []
+      };
       replies = $('.ReplyBox');
       replies.each(function() {
         var author, authorDom, contentDom, contentPreprocessor, date, gender, getReplyIdFromDom, images, replyId, _i, _len;
@@ -55,7 +57,7 @@
             $this = $(this);
             return images.push(getImageSourceFromAlt($this));
           });
-          return result.push({
+          return result.replies.push({
             author: author,
             gender: gender,
             content: contentDom.html(),

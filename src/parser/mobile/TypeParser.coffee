@@ -5,13 +5,13 @@ class TypeParser
   parse: (responseBody, onCompleteCallback) ->
     $ = cheerio.load responseBody
 
-    result = []
+    result =
+      types: []
     $('.MainBoxLink').each (i, ele)->
       self = $(ele)
-      result.push
+      result.types.push
         name: self.text()
         key: self.attr('href').replace('./topics.aspx?type=', '')
-
 
     onCompleteCallback result
 

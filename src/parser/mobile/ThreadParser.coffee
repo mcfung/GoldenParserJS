@@ -9,11 +9,12 @@ class ThreadParser
     $ = cheerio.load responseBody
 
     preprocessors = @preprocessors
-    result = []
-    result.isNextPageAvailable = $('.View_PageSelectRight').text().trim() isnt ''
-    result.isPreviousPageAvailable = $('.View_PageSelectLeft').text().trim() isnt ''
-    result.totalNumberOfPage = $('option', $('select.View_PageSelect').get(0)).length - 2
-    result.title = $('.ViewTitle').text().trim()
+    result =
+      isNextPageAvailable: $('.View_PageSelectRight').text().trim() isnt ''
+      isPreviousPageAvailable: $('.View_PageSelectLeft').text().trim() isnt ''
+      totalNumberOfPage: $('option', $('select.View_PageSelect').get(0)).length - 2
+      title: $('.ViewTitle').text().trim()
+      replies: []
     replies = $ '.ReplyBox'
     replies.each ->
 
@@ -45,7 +46,7 @@ class ThreadParser
           $this = $ @
           images.push getImageSourceFromAlt($this)
 
-        result.push
+        result.replies.push
           author: author
           gender: gender
           content: contentDom.html()

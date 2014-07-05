@@ -11,10 +11,12 @@
       var $, result, topicDoms;
       $ = cheerio.load(responseBody);
       topicDoms = $('.TopicBox_Details');
-      result = [];
-      result.isNextPageAvailable = $('.View_PageSelectRight').text().trim() !== '';
-      result.isPreviousPageAvailable = $('.View_PageSelectLeft').text().trim() !== '';
-      result.totalNumberOfPage = $('option', $('select.View_PageSelect').get(0)).length;
+      result = {
+        isNextPageAvailable: $('.View_PageSelectRight').text().trim() !== '',
+        isPreviousPageAvailable: $('.View_PageSelectLeft').text().trim() !== '',
+        totalNumberOfPage: $('option', $('select.View_PageSelect').get(0)).length,
+        topics: []
+      };
       topicDoms.each(function() {
         var authorAndRating, getAuthorAndRating, getMessageId, getNumberOfReplies, getTitle, getTotalNumberOfPage, messageId, numberOfReplies, title, totalNumberOfPage;
         getAuthorAndRating = function(ele) {
@@ -55,7 +57,7 @@
         messageId = getMessageId(this);
         totalNumberOfPage = getTotalNumberOfPage(this);
         numberOfReplies = getNumberOfReplies(this);
-        return result.push({
+        return result.topics.push({
           author: authorAndRating.author,
           rating: authorAndRating.rating,
           title: title,

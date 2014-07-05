@@ -10,11 +10,13 @@
     TypeParser.prototype.parse = function(responseBody, onCompleteCallback) {
       var $, result;
       $ = cheerio.load(responseBody);
-      result = [];
+      result = {
+        types: []
+      };
       $('.MainBoxLink').each(function(i, ele) {
         var self;
         self = $(ele);
-        return result.push({
+        return result.types.push({
           name: self.text(),
           key: self.attr('href').replace('./topics.aspx?type=', '')
         });

@@ -629,7 +629,8 @@ exports.MobileGoldenParser =
     }, (err, data) ->
       test.ifError err
       mobileGoldenParser.parseTypes data, (result) ->
-        expected = [
+        expected = {
+        types: [
           {
             name: '娛樂台'
             key: 'ET'
@@ -754,6 +755,6 @@ exports.MobileGoldenParser =
             name: '吹水台'
             key: 'BW'
           }
-        ]
+        ]}
         test.deepEqual result, expected
         test.done()

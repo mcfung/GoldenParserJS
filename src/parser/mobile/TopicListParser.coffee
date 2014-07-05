@@ -5,10 +5,12 @@ class TopicListParser
   parse: (responseBody, onCompleteCallback) ->
     $ = cheerio.load responseBody
     topicDoms = $ '.TopicBox_Details'
-    result = []
-    result.isNextPageAvailable = $('.View_PageSelectRight').text().trim() isnt ''
-    result.isPreviousPageAvailable = $('.View_PageSelectLeft').text().trim() isnt ''
-    result.totalNumberOfPage = $('option', $('select.View_PageSelect').get(0)).length
+    result =
+      isNextPageAvailable: $('.View_PageSelectRight').text().trim() isnt ''
+      isPreviousPageAvailable: $('.View_PageSelectLeft').text().trim() isnt ''
+      totalNumberOfPage: $('option', $('select.View_PageSelect').get(0)).length
+      topics: []
+
     topicDoms.each ->
       getAuthorAndRating = (ele) ->
         authorDom = $ '.TopicBox_Author', ele
@@ -44,7 +46,7 @@ class TopicListParser
       totalNumberOfPage = getTotalNumberOfPage @
       numberOfReplies = getNumberOfReplies @
 
-      result.push
+      result.topics.push
         author: authorAndRating.author
         rating: authorAndRating.rating
         title: title
