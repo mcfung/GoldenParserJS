@@ -25,7 +25,7 @@ npm install golden-parser
     fs.readFile('./topics.html', {
           encoding: 'utf8'
         }, function(err, html) {
-            mobileGoldenParser.parseTopicList(html, function(topics) {
+            mobileGoldenParser.parseTopics(html, function(result) {
             });
         });
 ```
@@ -46,7 +46,10 @@ Available options:
     array of function(element, $) or object with preprocess(element, $) method
 Each reply will be preprocessed by each preprocessor. `element` given is the DOMElement of the processing reply and $ is the cheerio object of the whole page.
 
-#### .parseTopicList(html, function(topics)) (0.1.1)
+#### .parseTopicList(html, function(topics)) (0.1.1) (deprecated)
+
+This method is deprecated because the augmentation of array object may incur some implementation problem for its caller.
+Use .parseTopics instead.
 
 This method parse the `html` of topic page of mobile golden forum to an array of JSON objects.
 Each JSON object represents a topic.
@@ -71,7 +74,32 @@ The expected JSON object is as follows:
 
 `totalNumberOfPage` is added to the array as a property to indicate the total number of page of topics.
 
-#### .parseThread(html, function(result)) (0.1.1)
+#### .parseTopics(html, function(result)) (0.2.0)
+
+This method parse the `html` of topic page of mobile golden forum and pass the parse result to the callback.
+The expected parse result is as follows:
+```js
+{
+  isNextPageAvailable: true,
+  isPreviousPageAvailable: false,
+  totalNumberOfPage: 100,
+  topics: [
+    {
+        author: 'someAuthor',
+        rating: 0,
+        title: 'someTitle',
+        messageId: '1234567',
+        totalNumberOfPage: 15,
+        numberOfReplies: 359
+    }
+  ]
+}
+```                          
+
+#### .parseThread(html, function(result)) (0.1.1) (deprecated)
+
+This method is deprecated because the augmentation of array object may incur some implementation problem for its caller.
+Use .parseThreadContent instead.
 
 This method parse the `html` of thread page of one of the thread in mobile golden forum to an array of JSON objects.
 Each JSON object represents a reply.
@@ -96,13 +124,13 @@ The `images` properties will store the images found in the reply, which is wrapp
 
 (since 0.1.2)
 
-Any image wrapped by `[img][/img]` will be preprocessed such that `onclick` is removed and the actual image src will be added as `ng-src` attribute.
+Any image wrapped by `[img][/img]` will be preprocessed such that `onclick` is removed and the actual image src will be added as `ng-src` attribute by default.
 e.g.
 ```html
 <img class=\"Image\" src=\"http://m3.hkgolden.com/images/mobile/camera.png\" alt=\"[img]https://abc.com/abc.jpg[/img]\" ng-src=\"https://abc.com/abc.jpg\">
 ```
 
-All faces icon will be preprocessed to use absolute URL.
+All faces icon will be preprocessed to use absolute URL by default.
 
 (since 0.1.3)
 
@@ -111,6 +139,34 @@ All faces icon will be preprocessed to use absolute URL.
 `totalNumberOfPage` is added to the array as a property to indicate the total number of page of given thread.
 
 `title` is added to the array as a property to indicate the title of the thread.
+
+#### .parseThreadContent(html, function(result)) (0.2.0)
+
+This method will preprocess and parse the `html` of thread page of one of the thread in mobile golden forum according to the preprocessors.
+And then pass the parse result to the callback.
+The expected JSON object is as follows:
+```js
+{
+  isNextPageAvailable: true,
+  isPreviousPageAvailable: false,
+  totalNumberOfPage: 1,
+  title: 'some title',
+  replies: [
+      {
+          author: 'someAuthor',
+          gender: 'male',
+          content: 'someContent',
+          images: ['http://example.com/example.jpg'],
+          date: '6/3/2014 6:49 AM',
+          replyId: '179492794'
+      }
+  ]
+}
+```             
+The `content` will be returning encoded character so there will be something like `&#x99AC;`.
+It will be rendered as chinese in browser and this is the expected behavior.
+
+The `images` properties will store the images found in the reply, which is wrapped in `[img][/img]` internally in hkgolden.
 
 #### .parseTypes(html, function(result)) (0.2.0)
 
@@ -141,15 +197,15 @@ The expected JSON object is as follows:
     fs.readFile('./topics.html', {
           encoding: 'utf8'
         }, function(err, html) {
-            mobileGoldenParser.parseTopicList(html, function(topics) {
+            mobileGoldenParser.parseTopics(html, function(result) {
             });
         });
 ```
+It is a coffeescript class so you can extends this class easily for more preprocessing.
 
 #### .preprocess(element, $)
 
 This method will prepend `http://#{@subDomain}.hkgolden.com` to the source of all image which source is start with `/faces` which would be the face icon in golden such that all face icon will be using absolute URL.
-It is a coffeescript class so you can extends this class easily for more preprocessing.
 
 #### .prependDomainToImageSrc(img)
 
@@ -171,7 +227,7 @@ This is subclass of ContentPreprocessor.
     fs.readFile('./topics.html', {
           encoding: 'utf8'
         }, function(err, html) {
-            mobileGoldenParser.parseTopicList(html, function(topics) {
+            mobileGoldenParser.parseTopics(html, function(result) {
             });
         });
 ```
