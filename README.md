@@ -189,7 +189,7 @@ The expected JSON object is as follows:
     var parser = require('golden-parser'),
         ContentPreprocessor = new parser.ContentPreprocessor("m3"),      
         mobileGoldenParser = new parser.MobileGoldenParser({
-            preprocessor: contentPreprocessor
+            contentPreprocessors: [contentPreprocessor]
         }),
         fs = require('fs')
 
@@ -219,7 +219,7 @@ This is subclass of ContentPreprocessor.
     var parser = require('golden-parser'),
         ContentPreprocessor = new parser.MobileGoldenContentPreprocessor("m3"),      
         mobileGoldenParser = new parser.MobileGoldenParser({
-            preprocessor: contentPreprocessor
+            contentPreprocessors: [contentPreprocessor]
         }),
         fs = require('fs')
 
