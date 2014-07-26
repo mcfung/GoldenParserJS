@@ -15,9 +15,9 @@ npm install golden-parser
 ```js
     var parser = require('golden-parser'),
         mobileGoldenParser = new parser.MobileGoldenParser({
-            preprocessor: function(contentElement) {
+            contentPreprocessors: [function(contentElement) {
                 // do something here
-            }
+            }]
         }),
         fs = require('fs')
 
