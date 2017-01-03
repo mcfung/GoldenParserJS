@@ -7,11 +7,11 @@ class TypeParser
 
     result =
       types: []
-    $('.MainBoxLink').each (i, ele)->
+    $('#channels>ul>li>a').each (i, ele)->
       self = $(ele)
       result.types.push
         name: self.text()
-        key: self.attr('href').replace('./topics.aspx?type=', '')
+        key: self.attr('type')
 
     onCompleteCallback result
 

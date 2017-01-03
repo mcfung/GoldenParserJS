@@ -21,7 +21,7 @@
         subDomain = "m1";
         contentPreprocessor = new MobileGoldenContentPreprocessor(subDomain);
         $ = cheerio.load(data);
-        $('.ReplyBox').each(function() {
+        $('.post').each(function() {
           var originalAlt;
           test.ok($('img.Image', this).attr('ng-src') === void 0);
           test.ok($('img.Image', this).attr('onclick') !== void 0);

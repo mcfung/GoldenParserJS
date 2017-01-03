@@ -4,27 +4,25 @@ class TopicListParser
 
   parse: (responseBody, onCompleteCallback) ->
     $ = cheerio.load responseBody
-    topicDoms = $ '.TopicBox_Details'
+    topicDoms = $ '.topic'
     result =
-      isNextPageAvailable: $('.View_PageSelectRight').text().trim() isnt ''
-      isPreviousPageAvailable: $('.View_PageSelectLeft').text().trim() isnt ''
-      totalNumberOfPage: $('option', $('select.View_PageSelect').get(0)).length
+      isNextPageAvailable: $('.ui-block-c>a').text().trim() isnt ''
+      isPreviousPageAvailable: $('.ui-block-a>a').text().trim() isnt ''
+      totalNumberOfPage: +$('.pageno').text().substring($('.pageno').text().lastIndexOf(' '))
       topics: []
 
     topicDoms.each ->
       getAuthorAndRating = (ele) ->
-        authorDom = $ '.TopicBox_Author', ele
-        text = authorDom.text().trim()
-        author = text.substring 0, text.indexOf "-"
-        author = author.trim()
-        rating = parseInt(text.substring text.lastIndexOf(":") + 2, text.lastIndexOf(")"))
+        authorDom = $ '.topic-name', ele
+        author = authorDom.text().trim()
+        rating = +$('.topic-count-like', ele).text()-$('.topic-count-dislike', ele).text()
         {
         author: author
         rating: rating
         }
 
       getTitle = (ele) ->
-        titleDom = $ 'a div:not(.TopicBox_Replies)', ele
+        titleDom = $ '.topic-title', ele
         titleDom.text().trim()
 
       getMessageId = (ele) ->
@@ -33,11 +31,10 @@ class TopicListParser
         href.substring href.indexOf("=") + 1, href.lastIndexOf("&")
 
       getTotalNumberOfPage = (ele) ->
-        pageOptionsDom = $ '.TopicBox_PageSelect option', ele
-        pageOptionsDom.length - 1
+        $('.topic-page', ele).attr('totalpage')
 
       getNumberOfReplies = (ele) ->
-        numberOfReplies = $ '.TopicBox_Replies', ele
+        numberOfReplies = $ '.topic-count-comment', ele
         numberOfReplies = parseInt numberOfReplies.text().trim()
 
       authorAndRating = getAuthorAndRating @

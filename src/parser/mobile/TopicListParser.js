@@ -10,22 +10,20 @@
     TopicListParser.prototype.parse = function(responseBody, onCompleteCallback) {
       var $, result, topicDoms;
       $ = cheerio.load(responseBody);
-      topicDoms = $('.TopicBox_Details');
+      topicDoms = $('.topic');
       result = {
-        isNextPageAvailable: $('.View_PageSelectRight').text().trim() !== '',
-        isPreviousPageAvailable: $('.View_PageSelectLeft').text().trim() !== '',
-        totalNumberOfPage: $('option', $('select.View_PageSelect').get(0)).length,
+        isNextPageAvailable: $('.ui-block-c>a').text().trim() !== '',
+        isPreviousPageAvailable: $('.ui-block-a>a').text().trim() !== '',
+        totalNumberOfPage: +$('.pageno').text().substring($('.pageno').text().lastIndexOf(' ')),
         topics: []
       };
       topicDoms.each(function() {
         var authorAndRating, getAuthorAndRating, getMessageId, getNumberOfReplies, getTitle, getTotalNumberOfPage, messageId, numberOfReplies, title, totalNumberOfPage;
         getAuthorAndRating = function(ele) {
-          var author, authorDom, rating, text;
-          authorDom = $('.TopicBox_Author', ele);
-          text = authorDom.text().trim();
-          author = text.substring(0, text.indexOf("-"));
-          author = author.trim();
-          rating = parseInt(text.substring(text.lastIndexOf(":") + 2, text.lastIndexOf(")")));
+          var author, authorDom, rating;
+          authorDom = $('.topic-name', ele);
+          author = authorDom.text().trim();
+          rating = +$('.topic-count-like', ele).text() - $('.topic-count-dislike', ele).text();
           return {
             author: author,
             rating: rating
@@ -33,7 +31,7 @@
         };
         getTitle = function(ele) {
           var titleDom;
-          titleDom = $('a div:not(.TopicBox_Replies)', ele);
+          titleDom = $('.topic-title', ele);
           return titleDom.text().trim();
         };
         getMessageId = function(ele) {
@@ -43,13 +41,11 @@
           return href.substring(href.indexOf("=") + 1, href.lastIndexOf("&"));
         };
         getTotalNumberOfPage = function(ele) {
-          var pageOptionsDom;
-          pageOptionsDom = $('.TopicBox_PageSelect option', ele);
-          return pageOptionsDom.length - 1;
+          return $('.topic-page', ele).attr('totalpage');
         };
         getNumberOfReplies = function(ele) {
           var numberOfReplies;
-          numberOfReplies = $('.TopicBox_Replies', ele);
+          numberOfReplies = $('.topic-count-comment', ele);
           return numberOfReplies = parseInt(numberOfReplies.text().trim());
         };
         authorAndRating = getAuthorAndRating(this);

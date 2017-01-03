@@ -19,7 +19,7 @@
         subDomain = "m1";
         contentPreprocessor = new ContentPreprocessor(subDomain);
         $ = cheerio.load(data);
-        $('.ReplyBox').each(function() {
+        $('.post').each(function() {
           var numberOfFaces;
           numberOfFaces = $('img[src^="/faces"]', this).length;
           test.ok(numberOfFaces !== 0);

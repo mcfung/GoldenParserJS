@@ -13,12 +13,12 @@
       result = {
         types: []
       };
-      $('.MainBoxLink').each(function(i, ele) {
+      $('#channels>ul>li>a').each(function(i, ele) {
         var self;
         self = $(ele);
         return result.types.push({
           name: self.text(),
-          key: self.attr('href').replace('./topics.aspx?type=', '')
+          key: self.attr('type')
         });
       });
       return onCompleteCallback(result);

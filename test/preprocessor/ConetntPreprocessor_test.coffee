@@ -13,7 +13,7 @@ exports.ContentPreprocessor =
       subDomain = "m1"
       contentPreprocessor = new ContentPreprocessor(subDomain)
       $ = cheerio.load(data)
-      $('.ReplyBox').each ->
+      $('.post').each ->
         numberOfFaces = $('img[src^="/faces"]', @).length
         test.ok(numberOfFaces isnt 0)
         contentPreprocessor.preprocess(@, $)

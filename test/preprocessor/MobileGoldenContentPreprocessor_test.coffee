@@ -14,7 +14,7 @@ exports.MobileGoldenContentPreprocessor =
       subDomain = "m1"
       contentPreprocessor = new MobileGoldenContentPreprocessor(subDomain)
       $ = cheerio.load(data)
-      $('.ReplyBox').each ->
+      $('.post').each ->
         test.ok($('img.Image', @).attr('ng-src') is undefined)
         test.ok($('img.Image', @).attr('onclick') isnt undefined)
         originalAlt = $('img.Image', @).attr('alt')

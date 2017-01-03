@@ -16,21 +16,19 @@
       $ = cheerio.load(responseBody);
       preprocessors = this.preprocessors;
       result = {
-        isNextPageAvailable: $('.View_PageSelectRight').text().trim() !== '',
-        isPreviousPageAvailable: $('.View_PageSelectLeft').text().trim() !== '',
-        totalNumberOfPage: $('option', $('select.View_PageSelect').get(0)).length - 2,
-        title: $('.ViewTitle').text().trim(),
+        isNextPageAvailable: $('.btn-page-next').length > 0,
+        isPreviousPageAvailable: $('.btn-page-prev').length > 0,
+        totalNumberOfPage: +$('.pageno').text().substring($('.pageno').text().lastIndexOf(' ')),
+        title: $('#heading').text().trim(),
         replies: []
       };
-      replies = $('.ReplyBox');
+      replies = $('.post');
       replies.each(function() {
         var author, authorDom, contentDom, contentPreprocessor, date, gender, getReplyIdFromDom, images, replyId, _i, _len;
         getReplyIdFromDom = function() {
-          var quoteLink, quoteLinkPattern, rid;
-          quoteLink = $('.ViewAuthorPanel a', this).attr('href');
-          quoteLinkPattern = /(rid=[0-9]*)/g;
-          rid = quoteLink.match(quoteLinkPattern)[0];
-          return rid.substring(rid.indexOf('=') + 1);
+          var id;
+          id = $(this).attr('id');
+          return id.substring(id.indexOf('_') + 1);
         };
         for (_i = 0, _len = preprocessors.length; _i < _len; _i++) {
           contentPreprocessor = preprocessors[_i];
@@ -44,12 +42,12 @@
             }
           }
         }
-        authorDom = $('.ViewNameMale, .ViewNameFemale', this);
+        authorDom = $('.name_male, .name_female', this);
         if (authorDom.length > 0) {
           author = authorDom.text();
-          gender = $('.ViewNameMale', this).length > 0 ? "male" : "female";
-          date = $('.ViewDate', this).text().trim();
-          contentDom = $($(this).children('div').get(1));
+          gender = $('.name_male', this).length > 0 ? "male" : "female";
+          date = $('.topic-time', this).text().trim();
+          contentDom = $('.post-content2', this);
           replyId = getReplyIdFromDom.call(this);
           images = [];
           $('img.Image', contentDom).each(function() {
