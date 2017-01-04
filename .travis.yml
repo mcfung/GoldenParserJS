@@ -1,12 +1,13 @@
 language: node_js
 node_js:
-- 'node'
+- node
 - '6'
 - '5'
 deploy:
   provider: npm
-  email: "mikechung4@gmail.com"
+  email: mikechung4@gmail.com
   api_key:
-    secure: ISn6TSXuZuyTKq4MN8XrYK3tTNc4nh8bVas4DcD5ooJgRFSsyjHbMQAhlGADwT/3oZNaEluWkzfBnuC5qls2ftKqWCNLMKQtPVG198ig60GheRAvgnkrvCGrT3odzCn0T0e3ZeY2OKyvAcScYavMEKJYSMDNwjWl0LwbWbOX6fc=
+    secure: BsUh3z8GZvPJX7YjECYm9VDAwh9ftu+pLPKNRfz/Hi6qiRqYgUywRedTfBDDWl92Q/a37ruantwW0e0sp477/qY9eZ5YTwBnteBVtYLjufl0rp3zxbAHDM+dd9idL8S2H4sjBkuy0IbZCGqWyTjCsCZPvE6lZkqz2jOiAMWLL5M=
   on:
     tags: true
+    repo: mcfung/GoldenParserJS
