@@ -7,7 +7,7 @@
     "url": "git@github.com:mcfung/GoldenParserJS.git"
   },
   "keywords": ["hkgolden", ":0)", "sosad", "369", "cd-rom"],
-  "version": "0.2.0",
+  "version": "0.2.1-SNAPSHOT",
   "main": "index.js",
   "dependencies": {
     "cheerio": "0.16.*"
