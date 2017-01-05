@@ -7,7 +7,7 @@ deploy:
   provider: npm
   email: mikechung4@gmail.com
   api_key:
-    secure: BsUh3z8GZvPJX7YjECYm9VDAwh9ftu+pLPKNRfz/Hi6qiRqYgUywRedTfBDDWl92Q/a37ruantwW0e0sp477/qY9eZ5YTwBnteBVtYLjufl0rp3zxbAHDM+dd9idL8S2H4sjBkuy0IbZCGqWyTjCsCZPvE6lZkqz2jOiAMWLL5M=
+    secure: o2P06AnasdVsRVg6BxboyW9Zp8svNFf9fxACywc9QnMB21DuI0xCMuHpQcatMgLHaXhwQcprPNpB9OinZG1Q8AVdPs/NjHdJNdz9mOCXu/RyaHmrwLKv8c6ht/85vq6wPRgQR0Koh4GXQuhwsSG5AOH3N6EXNC6PS0CL2u3mRBg=
   on:
     tags: true
     repo: mcfung/GoldenParserJS
